@@ -3,11 +3,11 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: Hexo
-subtitle:
-description:
-keywords:
-author: John Doe
+title: Zephyr's Blog
+subtitle: Save my life.
+description: The blog to record my life.
+keywords: blog
+author: Zephyr
 language:
 timezone:
 
