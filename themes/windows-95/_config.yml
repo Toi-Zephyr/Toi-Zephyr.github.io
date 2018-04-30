@@ -2,12 +2,12 @@
 language: en
 
 # site name
-site_name: "stephen's blog"
+site_name: "Zephyr's blog"
 
 # main menu navigation
 menu:
-  首页: /
-  关于: /about
+  Index: /
+  About: /about
 
 # Miscelaneous
 favicon: /favicon.ico
