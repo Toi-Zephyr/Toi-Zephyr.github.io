@@ -78,6 +78,44 @@ $ cowsay -f bud-frogs "hello"
 <br />
 
 ------
+## fortune
+The "fortune" command will be provided randomly, but it is hoped that it will be able to quote wise quotes or make a fortune today.
+
+```shell
+$ fortune -s
+You will pioneer the first Martian colony.
+```
+
+**Also** the cow can be made to say the fortune like this
+
+```shell
+$ fortune | cowsay
+ _________________________________________ 
+/ My own dear love, he is strong and bold \
+|                                         |
+| And he cares not what comes after. His  |
+| words ring sweet as a chime of gold,    |
+|                                         |
+| And his eyes are lit with laughter. He  |
+| is jubilant as a flag unfurled --       |
+|                                         |
+| Oh, a girl, she'd not forget him. My    |
+| own dear love, he is all my world --    |
+|                                         |
+| And I wish I'd never met him.           |
+|                                         |
+\ -- Dorothy Parker, part 1               /
+ ----------------------------------------- 
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+```
+
+<br />
+
+------
 ## sl
 
 
@@ -120,3 +158,47 @@ $ figlet Hello
 |_| |_|\___|_|_|\___/ 
                       
 ```
+
+<br />
+
+------
+
+## Watch Star Wars
+
+Watch <Star Wars> in terminal! Just like this:
+
+```shell
+$ telnet towel.blinkenlights.nl
+```
+
+```shell
+
+
+
+
+
+
+                  ..........   @@@@@    @@@@@             ...........    
+                  .........   @     @  @     @            ..........     
+                  ........       @@@   @     @             ........      
+                  .......      @@      @     @             ........      
+                   ......     @@@@@@@   @@@@@  th         ......         
+                  ......    -----------------------        ....          
+                  .....       C  E  N  T  U  R  Y          ...           
+                  ....      -----------------------        ...           
+                  ..        @@@@@ @@@@@ @   @ @@@@@        ..            
+                  ==          @   @      @ @    @          ==            
+                __||__        @   @@@@    @     @        __||__          
+               |      |       @   @      @ @    @       |      |         
+      _________|______|_____  @   @@@@@ @   @   @  _____|______|_________
+
+
+
+
+
+
+```
+
+<br />
+
+------
