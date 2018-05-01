@@ -3,7 +3,7 @@ title: Funny command!
 date: 2018-04-12 03:13:45
 description: About some funny command in terminal.
 categories: fun
-tags: [tools, fun]
+tags: [fun]
 toc: true
 ---
 ```shell
