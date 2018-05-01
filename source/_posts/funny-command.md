@@ -170,7 +170,7 @@ Watch <Star Wars> in terminal! Just like this:
 ```shell
 $ telnet towel.blinkenlights.nl
 ```
-
+<br />
 ```shell
 
 
