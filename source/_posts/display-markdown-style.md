@@ -1,5 +1,5 @@
 ---
-title: Display markdown style
+title: Show markdown's style
 date: 2018-04-15 12:32:11
 description: Show the markdown style
 categories: others
