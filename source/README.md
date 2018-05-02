@@ -1,3 +1,3 @@
-# Zephyr's Blog
+# Zophyr
 
 > Save my life.
