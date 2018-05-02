@@ -29,9 +29,9 @@ toc: true
             
 ```
 
-<br />
-
 ------
+<!---more--->
+
 ## cowsay
 
 ***Cowsay*** is a little funny cow that will speak what you say.
@@ -75,9 +75,6 @@ $ cowsay -f bud-frogs "hello"
           '  '--'    ==`-'==        '--'  '
 ```
 
-<br />
-
-------
 ## fortune
 The "fortune" command will be provided randomly, but it is hoped that it will be able to quote wise quotes or make a fortune today.
 
@@ -113,9 +110,6 @@ $ fortune | cowsay
                 ||     ||
 ```
 
-<br />
-
-------
 ## sl
 
 
@@ -142,9 +136,6 @@ If you want to hit **`ls`** but type **`sl`** then there will be a train whizzin
 
 ```
 
-<br />
-
-------
 ## figlet
 
 The figlet command can be used to draw large text banners.
@@ -159,9 +150,6 @@ $ figlet Hello
                       
 ```
 
-<br />
-
-------
 
 ## Watch Star Wars
 
@@ -170,7 +158,7 @@ Watch <Star Wars> in terminal! Just like this:
 ```shell
 $ telnet towel.blinkenlights.nl
 ```
-<br />
+
 ```shell
 
 
@@ -198,7 +186,3 @@ $ telnet towel.blinkenlights.nl
 
 
 ```
-
-<br />
-
-------
