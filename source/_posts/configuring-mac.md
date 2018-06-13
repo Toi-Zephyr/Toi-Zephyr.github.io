@@ -148,7 +148,7 @@ $ react-native run-ios
 
 [VS Code 官网](https://code.visualstudio.com)
 
-配置 `VS Code` 参考另一篇文章（还没写）
+配置 `VS Code` 参考另一篇文章 [配置 VS Code](https://zophyr.com/2018/06/05/vscode/)
 
 ### 安装 「GitHub Desktop」
 
