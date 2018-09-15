@@ -2,8 +2,8 @@
 title: 使用 VirtualBox 让 PC 提供云桌面服务
 date: 2019-09-12 21:35:28
 description: 用户将可以通过互联网，使用微软远程桌面，远程访问在PC机上创建的虚拟机。
-categories: Services Computing
-tags: [Services Computing]
+categories: Services-Computing
+tags: [Services-Computing]
 toc: true
 ---
 
@@ -51,42 +51,42 @@ toc: true
 
 ### 安装 CentOS 7
 
-   1. 创建新的虚拟机
-        - 点击界面左上角【新建】，输入虚拟机名称，安装的系统为CentOS则版本选择Red Hat
-        - ![iA9spT.png](https://s1.ax1x.com/2018/09/12/iA9spT.png)
-        - 配置内存大小，建议2G及以上
-        - ![iA90kq.png](https://s1.ax1x.com/2018/09/12/iA90kq.png)
-        - 创建虚拟硬盘
-        - ![iA9d7n.png](https://s1.ax1x.com/2018/09/12/iA9d7n.png)
-        - 选择VDI
-        - ![iA9a0s.png](https://s1.ax1x.com/2018/09/12/iA9a0s.png)
-        - 选择动态分配
-        - ![iA9y1U.png](https://s1.ax1x.com/2018/09/12/iA9y1U.png)
-        - 配置虚拟磁盘大小，建议30G以上且为2的倍数
-        - ![iA9Bt0.png](https://s1.ax1x.com/2018/09/12/iA9Bt0.png)
-        - 创建成功！
-        - ![iA9DhV.png](https://s1.ax1x.com/2018/09/12/iA9DhV.png)
-    2. 配置虚拟机相关设置
-        - 在创建好的虚拟机上面【右键】--> 【设置】
-        - 点击【网络】 --> 【网卡2】
-        - 点击【启用网络连接】--> 【连接方式】选择 **仅主机（Host-Only）网络** --> 【界面名称】选择 **VirtualBox Host-Only Ethernet Adapter #2**
-        - ![iA9qnH.png](https://s1.ax1x.com/2018/09/12/iA9qnH.png)
-    3. 启动虚拟机，安装CentOS
-        - 双击我们的虚拟机，第一次启动会提醒我们选择启动盘，我们需要选择之前我们下载的镜像iso文件。选择好点击【启动】即可。
-        - ![iACiuQ.png](https://s1.ax1x.com/2018/09/12/iACiuQ.png)
-        - 之后出现安装界面，选择 Install CentOS 7
-        - ![iACVNq.png](https://s1.ax1x.com/2018/09/12/iACVNq.png)
-        - 接下来一堆字符闪过，我们等待语言界面出现即可。此时点击虚拟机界面鼠标将会被锁定在虚拟机介面内，脱离锁定需要点击【右ctrl】按钮
-        - ![iAPVqH.png](https://s1.ax1x.com/2018/09/12/iAPVqH.png)
-        - 选择语言，进入安装信息摘要界面
-        - ![iAPEse.png](https://s1.ax1x.com/2018/09/12/iAPEse.png)
-        - 选择【网络和主机名】
-        - 点击【以太网（enp0s3）】右边按钮【打开】
-        - ![iAPFxO.png](https://s1.ax1x.com/2018/09/12/iAPFxO.png)
-        - 点击【以太网（enp0s8）】右边按钮【打开】并点击右下角【配置】，选 IPv4 设置，【方法】设置为手动，并输入刚刚的地址。
-        - ![iAPAMD.png](https://s1.ax1x.com/2018/09/12/iAPAMD.png)
-        - 点击开始安装。等待安装完成。
-        - ![iAP8sg.png](https://s1.ax1x.com/2018/09/12/iAP8sg.png)
+1. 创建新的虚拟机
+    - 点击界面左上角【新建】，输入虚拟机名称，安装的系统为CentOS则版本选择Red Hat
+    - ![iA9spT.png](https://s1.ax1x.com/2018/09/12/iA9spT.png)
+    - 配置内存大小，建议2G及以上
+    - ![iA90kq.png](https://s1.ax1x.com/2018/09/12/iA90kq.png)
+    - 创建虚拟硬盘
+    - ![iA9d7n.png](https://s1.ax1x.com/2018/09/12/iA9d7n.png)
+    - 选择VDI
+    - ![iA9a0s.png](https://s1.ax1x.com/2018/09/12/iA9a0s.png)
+    - 选择动态分配
+    - ![iA9y1U.png](https://s1.ax1x.com/2018/09/12/iA9y1U.png)
+    - 配置虚拟磁盘大小，建议30G以上且为2的倍数
+    - ![iA9Bt0.png](https://s1.ax1x.com/2018/09/12/iA9Bt0.png)
+    - 创建成功！
+    - ![iA9DhV.png](https://s1.ax1x.com/2018/09/12/iA9DhV.png)
+2. 配置虚拟机相关设置
+    - 在创建好的虚拟机上面【右键】--> 【设置】
+    - 点击【网络】 --> 【网卡2】
+    - 点击【启用网络连接】--> 【连接方式】选择 **仅主机（Host-Only）网络** --> 【界面名称】选择 **VirtualBox Host-Only Ethernet Adapter #2**
+    - ![iA9qnH.png](https://s1.ax1x.com/2018/09/12/iA9qnH.png)
+3. 启动虚拟机，安装CentOS
+    - 双击我们的虚拟机，第一次启动会提醒我们选择启动盘，我们需要选择之前我们下载的镜像iso文件。选择好点击【启动】即可。
+    - ![iACiuQ.png](https://s1.ax1x.com/2018/09/12/iACiuQ.png)
+    - 之后出现安装界面，选择 Install CentOS 7
+    - ![iACVNq.png](https://s1.ax1x.com/2018/09/12/iACVNq.png)
+    - 接下来一堆字符闪过，我们等待语言界面出现即可。此时点击虚拟机界面鼠标将会被锁定在虚拟机界面内，脱离锁定需要点击【右ctrl】按钮
+    - ![iAPVqH.png](https://s1.ax1x.com/2018/09/12/iAPVqH.png)
+    - 选择语言，进入安装信息摘要界面
+    - ![iAPEse.png](https://s1.ax1x.com/2018/09/12/iAPEse.png)
+    - 选择【网络和主机名】
+    - 点击【以太网（enp0s3）】右边按钮【打开】
+    - ![iAPFxO.png](https://s1.ax1x.com/2018/09/12/iAPFxO.png)
+    - 点击【以太网（enp0s8）】右边按钮【打开】并点击右下角【配置】，选 IPv4 设置，【方法】设置为手动，并输入刚刚的地址。
+    - ![iAPAMD.png](https://s1.ax1x.com/2018/09/12/iAPAMD.png)
+    - 点击开始安装。等待安装完成。
+    - ![iAP8sg.png](https://s1.ax1x.com/2018/09/12/iAP8sg.png)
     
 ### 配置 CentOS 7
 
@@ -113,8 +113,8 @@ toc: true
 
 #### SSH连接
 
-    - `ssh root@192.168.100.3`
-    - ![iAiGp6.png](https://s1.ax1x.com/2018/09/12/iAiGp6.png)
+- `ssh root@192.168.100.3`
+- ![iAiGp6.png](https://s1.ax1x.com/2018/09/12/iAiGp6.png)
 
 #### Windows 远程桌面连接
 
