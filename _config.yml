@@ -82,5 +82,5 @@ theme: windows-95
 deploy:
   type: git
   repository:
-    github: https://github.com/Toi-Zephyr/Toi-Zephyr.github.io
+    github: https://github.com/Zophyr/Toi-Zephyr.github.io
   branch: master
