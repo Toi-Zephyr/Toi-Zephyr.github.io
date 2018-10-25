@@ -1,6 +1,6 @@
 ---
 title: Hello Python!
-date: 2018-03-16 23:33:22
+date: 2018-10-08 17:49:20
 description: Python 环境配置 —— python 2 & python 3 和谐共处
 categories: python
 tags: [python]
