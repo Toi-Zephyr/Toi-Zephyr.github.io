@@ -1,12 +1,12 @@
-title_primary: "活版印字" # the bigger text
-title_secondary: "Typography" # the smaller text
+title_primary: "江海共余生" # the bigger text
+title_secondary: "Zephyr" # the smaller text
 keywords:
 
 twitter: #username
-rss: atom.xml
+rss: #
 weibo: #username/id
 instagram: #username
-github: #username
+github: Zophyr
 
 # Choose the comment service according to your need.
 # Please do not use the two services at the same time.
