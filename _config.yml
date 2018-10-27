@@ -8,7 +8,7 @@ subtitle: Save my life.
 description: Zephyr's blog which to record the life.
 keywords: blog
 author: Zephyr
-language:
+language: zh-tw
 timezone:
 
 # URL
@@ -99,7 +99,7 @@ pagination_dir: page
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
 
-theme: journal
+theme: typography
 ## theme: landscape
 
 # Deployment
