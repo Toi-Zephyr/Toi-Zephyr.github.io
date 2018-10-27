@@ -1,9 +1,9 @@
-sidebar_title: "Novα<br>Journal."
-sidebar_subtitle: "點滴在此聚集"
+sidebar_title: "无一是你<br>无一不是你"
+sidebar_subtitle: "江海共余生"
 
 truncate_len: 60
 
-rss: atom.xml
+# rss: atom.xml
 
 # Choose the comment service according to your need.
 # Please do not use the two services at the same time.
