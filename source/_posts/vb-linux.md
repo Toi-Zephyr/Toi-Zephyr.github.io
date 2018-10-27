@@ -2,9 +2,11 @@
 title: 使用 VirtualBox 让 PC 提供云桌面服务
 date: 2019-09-12 21:35:28
 description: 用户将可以通过互联网，使用微软远程桌面，远程访问在PC机上创建的虚拟机。
+intro: 用户将可以通过互联网，使用微软远程桌面，远程访问在PC机上创建的虚拟机。
 categories: Services-Computing
 tags: [Services-Computing]
 toc: true
+featured_image: "https://s1.ax1x.com/2018/10/28/ic0PdP.jpg"
 ---
 
 ## 当前环境
