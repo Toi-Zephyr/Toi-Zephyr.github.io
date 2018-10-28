@@ -1,9 +1,9 @@
 ---
 title: Cocos2d-x 环境配置
 date: 2018-05-15 08:49:15
-description: Star Cocos
-categories: cocos
-tags: [cocos]
+description: "Cocos2d 是一个开源的2D游戏框架。<br>本文将描述如何在Mac平台下进行 Cocos2d-x 开发环境配置。"
+categories: 教程
+tags: [cocos2d, 环境配置, hello-world, 教程]
 toc: true
 ---
 

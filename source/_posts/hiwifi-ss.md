@@ -1,8 +1,8 @@
 ---
 title: 使用极路由进行网络加速（SS）
 description: 借助 Github开源社区上的SS插件 为极路由添加跳跃能力
-categories: others
-tags: [others]
+categories: 教程
+tags: [教程, SS, 极路由]
 toc: true
 ---
 

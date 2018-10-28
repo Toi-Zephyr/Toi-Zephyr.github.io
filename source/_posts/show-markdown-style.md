@@ -1,9 +1,9 @@
 ---
-title: Show markdown's style
+title: 看看马克蛋的样子
 date: 2018-04-15 12:32:11
-description: Show the markdown style
-categories: others
-tags: [others]
+description: 展示本网站的各种Markdown样式
+categories: 教程
+tags: [Markdown, 样式]
 toc: true
 ---
 

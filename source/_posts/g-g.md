@@ -2,8 +2,8 @@
 title: Go语言环境配置及Git配置总结
 date: 2018-09-26 08:49:15
 description: Go & Git
-categories: Go
-tags: [Go]
+categories: 教程
+tags: [环境配置, 教程, Go, Git, hello-world]
 toc: true
 ---
 

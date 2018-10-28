@@ -2,8 +2,8 @@
 title: Hello World!
 date: 2018-03-16 23:33:22
 description: the first blog
-categories: others
-tags: [others]
+categories: 杂谈
+tags: [hello-world]
 toc: true
 ---
 ```c++

@@ -2,8 +2,8 @@
 title: Hello Python!
 date: 2018-10-08 17:49:20
 description: Python 环境配置 —— python 2 & python 3 和谐共处
-categories: python
-tags: [python]
+categories: 教程
+tags: [环境配置, 教程, Python, hello-world]
 toc: true
 ---
 

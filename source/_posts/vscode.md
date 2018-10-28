@@ -1,9 +1,9 @@
 ---
-title: 配置 VS Code
+title: 用插件武装 VSCode
 date: 2018-06-05 17:23:55
-description: 配置 VS Code
-categories: others
-tags: [others]
+description: "工欲善其事必先利其器。<br>借助丰富的插件，将 VSCode 打造成顺手的编辑器。"
+categories: 教程
+tags: [环境配置, 教程, VSCode]
 toc: true
 ---
 

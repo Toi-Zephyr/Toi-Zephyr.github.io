@@ -1,9 +1,9 @@
 ---
 title: 新拿到 Mac 应该做的事情
 date: 2018-06-01 05:51:22
-description: 配置 Mac 各种环境，让 Mac 成为顺手的开发工具
-categories: others
-tags: [others]
+description: "Mac 是优秀的个人计算机。<br>本文将分享拿到一台 Mac 之后，如何配置 Mac 各种环境，让 Mac 成为顺手的开发工具和生活伴侣。"
+categories: 教程
+tags: [环境配置, 教程, Mac]
 toc: true
 ---
 

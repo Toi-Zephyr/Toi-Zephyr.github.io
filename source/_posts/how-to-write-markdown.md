@@ -1,9 +1,9 @@
 ---
-title: Markdown教程
+title: Markdown 教程
 date: 2018-04-24 09:51:23
-description: 学习使用markdown语法
-categories: others
-tags: [others]
+description: "Markdown 是一种用来写作的轻量级「标记语言」，旨在简洁、高效。<br>Markdown 易读易写，它用简洁的语法代替排版，可通过本文了解学习其基本的语法"
+categories: 教程
+tags: [Markdown, 教程, 语法]
 toc: true
 ---
 

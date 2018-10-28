@@ -1,9 +1,9 @@
 ---
 title: Funny command!
 date: 2018-04-12 03:13:45
-description: About some funny command in terminal.
-categories: fun
-tags: [fun]
+description: "一些有趣的命令行命令<br>在命令行中做奇思妙想的事情"
+categories: ForFun
+tags: [command, terminal, fun]
 toc: true
 ---
 ```shell
