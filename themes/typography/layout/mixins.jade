@@ -5,6 +5,15 @@ mixin make_post(item, is_detail)
                 a= item.title
             else
                 a(href= url_for(item.path))= item.title
+        if is_detail
+            p.post-abstract!= item.content
+        else
+            if item.description
+                if item.description.length > 0
+                    p.post-abstract!= item.description
+            else 
+                p.post-abstract!= truncate(strip_html(item.content), {length: 160})
+            //- p.post-abstract!= item.description
         p.post-meta
             span.date.meta-item!=__("posted_at")+"&nbsp;" + date(item.date, 'YYYY-MM-DD')
             if theme.duoshuo || theme.disqus
@@ -32,15 +41,7 @@ mixin make_post(item, is_detail)
                             a.a-tag(href=config.root + item.path, title= item.name)= item.name
                             span  / 
                             - });
-        if is_detail
-            p.post-abstract!= item.content
-        else
-            if item.description
-                if item.description.length > 0
-                    p.post-abstract!= item.description
-            else 
-                p.post-abstract!= truncate(strip_html(item.content), {length: 160})
-            //- p.post-abstract!= item.description
+        
 
 mixin make_page_links()
     if site.pages
