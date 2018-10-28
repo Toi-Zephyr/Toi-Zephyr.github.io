@@ -30,7 +30,7 @@ mixin make_post(item, is_detail)
                             span &nbsp;
                             - item.tags.sort('posts').each(function(item) {
                             a.a-tag(href=config.root + item.path, title= item.name)= item.name
-                            span &nbsp;
+                            span  / 
                             - });
         if is_detail
             p.post-abstract!= item.content

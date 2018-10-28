@@ -268,10 +268,14 @@ a {
   -moz-transition: color 0.3s ease 0s, background-color 0.3s ease 0s;
   -o-transition: color 0.3s ease 0s, background-color 0.3s ease 0s;
   -webkit-transition: color 0.3s ease 0s, background-color 0.3s ease 0s;
-  border-bottom: solid $foregroundColor 2px;
+  
   padding: 0;
   cursor: pointer;
   cursor: hand;
+}
+
+.post-title a {
+  border-bottom: solid $foregroundColor 2px;
 }
 
 a:hover {

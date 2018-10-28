@@ -413,10 +413,12 @@ a {
   -moz-transition: color 0.3s ease 0s, background-color 0.3s ease 0s;
   -o-transition: color 0.3s ease 0s, background-color 0.3s ease 0s;
   -webkit-transition: color 0.3s ease 0s, background-color 0.3s ease 0s;
-  border-bottom: solid #2e405b 2px;
   padding: 0;
   cursor: pointer;
   cursor: hand; }
+
+.post-title a {
+  border-bottom: solid #2e405b 2px; }
 
 a:hover {
   color: #ffffff !important;
@@ -471,7 +473,7 @@ a:focus {
   color: #3f587d !important;
   background-color: transparent !important;
   text-decoration: none;
-  border-bottom: solid transparent 2px; }
+  border-bottom: solid rgba(0, 0, 0, 0) 2px; }
 
 .soc a:focus {
   color: #3f587d !important; }
