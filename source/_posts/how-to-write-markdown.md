@@ -1,7 +1,7 @@
 ---
 title: Markdown教程
 date: 2018-04-24 09:51:23
-description: Teach my girlfriend to write markdown
+description: 学习使用markdown语法
 categories: others
 tags: [others]
 toc: true
