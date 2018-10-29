@@ -23,7 +23,7 @@ toc: true
     ```shell
     $ /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
     ```
-2. 升级 「Homebrew」
+2. 升级 「Homebrew」
     ```shell
     $ brew update
     ```
@@ -44,19 +44,19 @@ toc: true
         # 在用户目录建立 python/
         $ mkdir ~/python
 
-        # 在 python/ 文件中建立 python2/ 与 python3/
+        # 在 python/ 文件中建立 python2/ 与 python3/
         $ mkdir ~/python/python2
         $ mkdir ~/python/python3
         ```
     2. 创建虚拟环境
         ```shell
-        # 创建 python2 的虚拟环境
+        # 创建 python2 的虚拟环境
         $ cd ~/python/python2
         $ sudo pip2 install virtualenv
         $ virtualenv venv_py2   # venv_py2 可设置为自己喜欢的名字
         ```
         ```shell
-        # 创建 python3 的虚拟环境
+        # 创建 python3 的虚拟环境
         $ cd ~/python/python3
         $ sudo pip3 install virtualenv
         $ virtualenv venv_py3   # venv_py3 可设置为自己喜欢的名字
