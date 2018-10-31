@@ -33,7 +33,7 @@ block content
                             |&nbsp;
                             != __('prev_post')+': ' + page.prev.title
                 if next
-                    span &nbsp;
+                    span  / 
                     span.next.pagbuttons
                         a(role="navigation",href=url_for(next), title=page.next.title)
                             != __('next_post')+': ' + page.next.title
