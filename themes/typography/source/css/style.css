@@ -413,12 +413,13 @@ a {
   -moz-transition: color 0.3s ease 0s, background-color 0.3s ease 0s;
   -o-transition: color 0.3s ease 0s, background-color 0.3s ease 0s;
   -webkit-transition: color 0.3s ease 0s, background-color 0.3s ease 0s;
+  border-bottom: solid #2e405b 2px;
   padding: 0;
   cursor: pointer;
   cursor: hand; }
 
-.post-title a {
-  border-bottom: solid #2e405b 2px; }
+.meta-item a {
+  border: 0px; }
 
 a:hover {
   color: #ffffff !important;
