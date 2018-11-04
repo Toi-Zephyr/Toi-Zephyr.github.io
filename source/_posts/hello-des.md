@@ -104,19 +104,19 @@ DES加密算法的核心流程，我们可以理解为五个步骤：
 
 密码函数f(R, K)接受两个输入：32 位的数据和 48 位的子密钥。
 
-##### E置换
+#### E置换
 
 > `void E_Extend(int input[32], int output[48], int table[48])`
 
 通过表 E 进行扩展置换，将输入的 32 位数据扩展为 48 位；
 
-##### s-box分组
+#### s-box分组
 
 > `void S_Comp(int input[48], int output[32], int table[8][4][16])`
 
 根据S盒进行置换
 
-##### P置换
+#### P置换
 
 > `void P_Rep(int input[32], int output[32], int table[32])`
 
