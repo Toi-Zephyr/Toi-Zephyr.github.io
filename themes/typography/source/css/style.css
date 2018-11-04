@@ -521,8 +521,27 @@ li {
 figure {
   overflow: scroll; }
 
-figure > table {
-  width: 100%; }
+figure tr {
+  border: 0px; }
+
+figure td {
+  padding: 0px; }
+
+table {
+  width: 100%;
+  margin-bottom: 16px; }
+
+thead {
+  border-bottom: solid #2e405b 2px; }
+
+tr {
+  border-bottom: solid #2e405b 1px; }
+
+td {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  padding-left: 12px;
+  padding-right: 12px; }
 
 pre * {
   font-family: Monaco, Menlo, "Source Code Pro", monospace; }
