@@ -45,16 +45,19 @@ toc: true
 #### Mac 用户
 
 0. 安装「Homebrew」
+    
     ```shell
     $ /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
     ```
 
 1. 升级「Homebrew」
+   
    ```shell
    brew update
    ```
 
 2. 安装 Geth
+   
    ```shell
    brew tap ethereum/ethereum
    brew install ethereum
@@ -73,16 +76,20 @@ Version: 1.8.17-stable
 ### 02/ 配置创世区块参数
 
 1. 创建操作目录文件夹。该文件夹将用于存储以太坊的账号以及相关数据。
+   
    ```shell
    $ mkdir ~/helloEth
    $ cd ~/helloEth
    ```
 
 2. 编写创世区块配置文件 `genesis.json`
+   
    ```shell
    $ vim genesis.json
    ```
+   
    在 genesis.json中输入下述代码
+   
    ```json
    {
     	"config": {
@@ -113,7 +120,9 @@ Version: 1.8.17-stable
 ```shell
 $ geth --datadir "./" init genesis.json
 ```
+
 执行完上述命令可见以下输出反馈：
+
 ```shell
 INFO [11-03|15:37:49.070] Maximum peer count                       ETH=25 LES=0 total=25
 INFO [11-03|15:37:49.248] Allocated cache and file handles         database=D:\\geth\\helloEth\\geth\\chaindata cache=16 handles=16
@@ -125,6 +134,7 @@ INFO [11-03|15:37:49.475] Writing custom genesis block
 INFO [11-03|15:37:49.475] Persisted trie from memory database      nodes=0 size=0.00B time=0s gcnodes=0 gcsize=0.00B gctime=0s livenodes=1 livesize=0.00B
 INFO [11-03|15:37:49.476] Successfully wrote genesis state         database=lightchaindata                           hash=570bab…526737
 ```
+
 > 上述 **INFO** 信息分别表示：当前允许的最大 peer 数量，分配的缓存和文件处理者，写入自定义的创世区块，从内存数据库中读取持久化的 trie，成功写入了创世区块。
 
 与此同时会在当前目录创建geth和keystore两个文件夹
@@ -213,9 +223,11 @@ modules: eth:1.0 miner:1.0 net:1.0 personal:1.0 rpc:1.0 web3:1.0
 ```shell
 > personal.newAccount('littleBear')
 ```
+
 上述命令通过给newAccount传递密码作为参数，完成了账号的创建。
 
 创建成功后，会返回一个账号地址：
+
 ```shell
 "0x86f36e6d3d7d0a417b8c9f92f6269fc2210a05f1"
 ```
@@ -225,6 +237,7 @@ modules: eth:1.0 miner:1.0 net:1.0 personal:1.0 rpc:1.0 web3:1.0
 ### 03/ 成为矿工
 
 **开始挖矿**
+
 ```shell
 > miner.start()
 ```
@@ -254,6 +267,7 @@ INFO [11-03|16:01:55.398] Mining too far in the future             wait=2s
 ```
 
 **停止挖矿**
+
 ```shell
 > miner.stop()
 ```
@@ -269,6 +283,7 @@ INFO [11-03|16:01:55.398] Mining too far in the future             wait=2s
 
 115
 ```
+
 > 该查询方式的单位为常见的单位，一以太。
 
 ```shell
@@ -276,13 +291,17 @@ INFO [11-03|16:01:55.398] Mining too far in the future             wait=2s
 
 115000000000000000000
 ```
+
 > 该查询方式以 Wei 作为计价单位，所以看上去会很多，实际上换算成以太币需要去掉 18 个 0。
 
 与此同时，我们来看看矿工挖到的区块，由什么组成：
+
 ```shell
 > eth.getBlock("latest")
 ```
+
 得到：
+
 ```json
 {
   difficulty: 137676,
@@ -307,6 +326,7 @@ INFO [11-03|16:01:55.398] Mining too far in the future             wait=2s
   uncles: []
 }
 ```
+
 **参数讲解**
 
 | 相关参数 | 含义 |
@@ -337,12 +357,15 @@ INFO [11-03|16:01:55.398] Mining too far in the future             wait=2s
 我们通过挖矿挖到了币，下面我们来尝试转账交易。
 
 1. 创建新用户。转账至少需要两个人，所以我们创建多一个账户。
+    
     ```shell
     > personal.newAccount("littlePig")
 
     "0x791e1755a91b042a39ecb30b6b8b480779ea5200"
     ```
+
 2. 查看双方余额。
+    
     ```shell
     > eth.getBalance("0x86f36e6d3d7d0a417b8c9f92f6269fc2210a05f1")
 
@@ -351,7 +374,9 @@ INFO [11-03|16:01:55.398] Mining too far in the future             wait=2s
 
     0
     ```
+
 3. 解锁账户。资金的转移，需要先进行账户解锁。
+    
     ```shell
     > personal.unlockAccount("0x86f36e6d3d7d0a417b8c9f92f6269fc2210a05f1")
 
@@ -361,17 +386,23 @@ INFO [11-03|16:01:55.398] Mining too far in the future             wait=2s
 
     true
     ```
+
 4. 转账。
+    
     ```shell
     > eth.sendTransaction({from:"0x86f36e6d3d7d0a417b8c9f92f6269fc2210a05f1", to:"0x791e1755a91b042a39ecb30b6b8b480779ea5200", value: 520})
 
     "0x22521335039a7e73536579afc6b6ab8c87c4ef0994397a2ed20b63445964effe"
     ```
+
 5. 挖矿。转账完成后，如果立刻通过eth.getBalance()查看余额，会发现并没有变化。这是因为sendTransaction这是发起了一笔交易事务，还没有得到确认，只是将这个事务放到了待提交池中。区块链的机制中是新创建区块的时候，会就从事务池中找出所有事务，进行有效性验证，验证成功后进行挖矿并将所有相关事务打包到区块中，待新的去区块成功加入到区块链中后，之前的转账就得到了最终的确认和永久固话。所以，我们需要挖矿。
+    
     ```shell
     > miner.start()
     ```
+
 6. 查看双方余额。转账成功。
+    
     ```shell
     > eth.getBalance("0x86f36e6d3d7d0a417b8c9f92f6269fc2210a05f1")
 
@@ -382,10 +413,13 @@ INFO [11-03|16:01:55.398] Mining too far in the future             wait=2s
     ```
 
 完成了交易，我们来看看交易具体发生了什么，看看 transaction：
+
 ```shell
 > eth.getTransaction("0x22521335039a7e73536579afc6b6ab8c87c4ef0994397a2ed20b63445964effe")
 ```
+
 得到：
+
 ```shell
 {
   blockHash: "0x140ebfcbdf6395222a5011e1f494f0edcbfa618552ce50c2d61d116b522c606f",
@@ -453,6 +487,7 @@ contract HelloWorld is Mortal {
 借助 [Remix 在线编译器](https://remix.ethereum.org/) ，我们将刚刚编写的智能合约编译成为可部署的命令。
 
 编译后得到如下：
+
 ```javascript
 var helloworldContract = web3.eth.contract([{"constant":true,"inputs":[],"name":"sayHi","outputs":[{"name":"","type":"string"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":false,"inputs":[],"name":"kill","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":false,"inputs":[{"name":"_helloworld","type":"string"}],"name":"SayHi","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"}]);
 var helloworld = helloworldContract.new(
@@ -492,7 +527,9 @@ Contract mined! address: 0xa97586f92acd398ecdc0a7ee328b4bccb5f24f71 transactionH
 ```shell
 >  eth.getTransaction("0x02320730498ecb2c97177d3559968cfa486eadb0849d47d2e3d8d385f5399007")
 ```
+
 得到：
+
 ```json
 {
   blockHash: "0x401c7add802323234e57c436735bf2b3c4e0efd22b1142c7a726f3b663cadac5",
