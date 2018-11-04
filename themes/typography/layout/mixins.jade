@@ -6,6 +6,33 @@ mixin make_post(item, is_detail)
             else
                 a(href= url_for(item.path))= item.title
         if is_detail
+            p.post-meta
+                span.date.meta-item!=__("posted_at")+"&nbsp;" + date(item.date, 'YYYY-MM-DD')
+                if theme.duoshuo || theme.disqus
+                    span.meta-item
+                        i.fa.fa-comment-o
+                        span &nbsp;
+                        a(href= url_for(item.path + "#comments"))= __('Comments')
+                if theme.showCategories
+                    if item.categories
+                        if item.categories.length > 0
+                            span.meta-item
+                                i.fa.fa-folder
+                                span &nbsp;
+                                - item.categories.sort('posts').each(function(item) {
+                                a.a-tag(href=config.root + item.path, title= item.name)= item.name
+                                span &nbsp;
+                                - });
+                if theme.showTags
+                    if item.tags
+                        if item.tags.length > 0
+                            span.meta-item
+                                i.fa.fa-tag
+                                span &nbsp;
+                                - item.tags.sort('posts').each(function(item) {
+                                a.a-tag(href=config.root + item.path, title= item.name)= item.name
+                                span  / 
+                                - });
             p.post-abstract!= item.content
         else
             if item.description
@@ -14,33 +41,33 @@ mixin make_post(item, is_detail)
             else 
                 p.post-abstract!= truncate(strip_html(item.content), {length: 160})
             //- p.post-abstract!= item.description
-        p.post-meta
-            span.date.meta-item!=__("posted_at")+"&nbsp;" + date(item.date, 'YYYY-MM-DD')
-            if theme.duoshuo || theme.disqus
-                span.meta-item
-                    i.fa.fa-comment-o
-                    span &nbsp;
-                    a(href= url_for(item.path + "#comments"))= __('Comments')
-            if theme.showCategories
-                if item.categories
-                    if item.categories.length > 0
-                        span.meta-item
-                            i.fa.fa-folder
-                            span &nbsp;
-                            - item.categories.sort('posts').each(function(item) {
-                            a.a-tag(href=config.root + item.path, title= item.name)= item.name
-                            span &nbsp;
-                            - });
-            if theme.showTags
-                if item.tags
-                    if item.tags.length > 0
-                        span.meta-item
-                            i.fa.fa-tag
-                            span &nbsp;
-                            - item.tags.sort('posts').each(function(item) {
-                            a.a-tag(href=config.root + item.path, title= item.name)= item.name
-                            span  / 
-                            - });
+            p.post-meta
+                span.date.meta-item!=__("posted_at")+"&nbsp;" + date(item.date, 'YYYY-MM-DD')
+                if theme.duoshuo || theme.disqus
+                    span.meta-item
+                        i.fa.fa-comment-o
+                        span &nbsp;
+                        a(href= url_for(item.path + "#comments"))= __('Comments')
+                if theme.showCategories
+                    if item.categories
+                        if item.categories.length > 0
+                            span.meta-item
+                                i.fa.fa-folder
+                                span &nbsp;
+                                - item.categories.sort('posts').each(function(item) {
+                                a.a-tag(href=config.root + item.path, title= item.name)= item.name
+                                span &nbsp;
+                                - });
+                if theme.showTags
+                    if item.tags
+                        if item.tags.length > 0
+                            span.meta-item
+                                i.fa.fa-tag
+                                span &nbsp;
+                                - item.tags.sort('posts').each(function(item) {
+                                a.a-tag(href=config.root + item.path, title= item.name)= item.name
+                                span  / 
+                                - });
         
 
 mixin make_page_links()
