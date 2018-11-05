@@ -21,7 +21,7 @@ toc: true
 - [x] 编写简单的智能合约
 - [x] 部署智能合约到私有链上
 - [x] 了解交易各字段的意思
-- [ ] 私有链节点的加入
+- [x] 私有链节点的加入
 
 ## 配置环境
 
@@ -551,9 +551,222 @@ Contract mined! address: 0xa97586f92acd398ecdc0a7ee328b4bccb5f24f71 transactionH
 
 变化主要接种在value中，value为 0 代表该交易用以部署智能合约。
 
+***截至到现在，我们已经成功完成学习部署智能合约并调用。下面，我们来学习在私有链中，加入多节点***
+
+## 添加多节点
+
+> 从 单 到 双 。
+
+### 01/ 创建多节点
+
+**创建节点一**
+
+```shell
+geth --datadir ./node1/ init genesis.json
+geth --datadir node1 --nodiscover --networkid 51024 --port 30123 console
+```
+
+**创建节点二**
+
+```shell
+geth --datadir ./node2/ init genesis.json
+geth --datadir node2 --nodiscover --networkid 51024 --port 30124 --ipcdisable console
+```
+
+> **⚠️ 注意** 
+> 在第二个节点创建的时候，必须添加参数 `--ipcdisable`。
+> 该参数表示启动节点时关闭文件rpc服务。
+> 因为windows下的prc是默认放在同一个文件下，会导致多节点启动时无法启动并报错：Fatal: Error starting protocol stack: Access is denied. 解决办法就是添加这个参数关闭这个节点的rpc服务。
+
+### 02/ 得到节点 enode 标示符
+
+在**节点二**的终端中，输入
+
+```shell
+> admin.nodeInfo
+```
+
+可得到：
+
+```JSON
+{
+  enode: "enode://fceb323e8d8f92a8b889285db9e7f5fe3c00e4d85bf5e7322f1f94be656a3e29b0fa568e05d3c3d5f651072e819f81f26e7a752e7960433a23b93d180d8ca642@222.200.179.26:30124?discport=0",
+  id: "537068799d08f5b45ac16bdbff980becac346ea950d425e09a59d0abc380b1d5",
+  ip: "222.200.179.26",
+  listenAddr: "[::]:30124",
+  name: "Geth/v1.8.17-stable-8bbe7207/windows-amd64/go1.11.1",
+  ports: {
+    discovery: 0,
+    listener: 30124
+  },
+  protocols: {
+    eth: {
+      config: {
+        chainId: 316,
+        eip150Hash: "0x0000000000000000000000000000000000000000000000000000000000000000",
+        eip155Block: 0,
+        eip158Block: 0,
+        homesteadBlock: 0
+      },
+      difficulty: 26941877,
+      genesis: "0xfc9dfad48c432dee78b0bd6ee3d0b81c22dd2995f0c2ae85e4c68d77000a1a36",
+      head: "0x63f8e667c32960f40bfe9326c7e0b0eb71331b8691c5eee1ea2acfceb9a00f03",
+      network: 51024
+    }
+  }
+}
+```
+
+我们复制字段`enode`中的参数
+
+```shell
+"enode://fceb323e8d8f92a8b889285db9e7f5fe3c00e4d85bf5e7322f1f94be656a3e29b0fa568e05d3c3d5f651072e819f81f26e7a752e7960433a23b93d180d8ca642@222.200.179.26:30124?discport=0"
+```
+
+> **⚠️ 注意** 
+> 我们需要将`enode`字段中，最后的一部分
+> 从`@`开始到`:30124？discport=0`结束间的这一部分的
+> `222.200.179.26`
+> 替换成
+> `[::]`
+
+得到
+
+```shell
+"enode://fceb323e8d8f92a8b889285db9e7f5fe3c00e4d85bf5e7322f1f94be656a3e29b0fa568e05d3c3d5f651072e819f81f26e7a752e7960433a23b93d180d8ca642@[::]:30124?discport=0"
+```
+
+### 03/ 添加节点
+
+在**节点一**的终端中，输入
+
+```shell
+> admin.addPeer("enode://fceb323e8d8f92a8b889285db9e7f5fe3c00e4d85bf5e7322f1f94be656a3e29b0fa568e05d3c3d5f651072e819f81f26e7a752e7960433a23b93d180d8ca642@[::]:30124?discport=0")
+```
+
+得到：
+
+```shell
+true
+```
+
+稍等片刻，在**节点一**终端中，会出现：
+
+```shell
+INFO [11-05|15:54:02.088] Block synchronisation started
+INFO [11-05|15:54:02.092] Imported new state entries               count=1 elapsed=0s        processed=1 pending=0 retry=0 duplicate=0 unexpected=0
+INFO [11-05|15:54:03.134] Imported new block headers               count=160 elapsed=1.037s    number=160 hash=2a7cfc…d50b13 age=1m17s
+INFO [11-05|15:54:03.142] Imported new block receipts              count=95  elapsed=0s        number=95  hash=7a1759…00f5ec age=2m36s    size=380.00B
+INFO [11-05|15:54:03.148] Imported new state entries               count=1   elapsed=0s        processed=2 pending=0 retry=0 duplicate=0 unexpected=0
+INFO [11-05|15:54:03.154] Imported new block receipts              count=1   elapsed=0s        number=96  hash=7c99c4…819586 age=2m32s    size=4.00B
+INFO [11-05|15:54:03.158] Committed new head block                 number=96  hash=7c99c4…819586
+INFO [11-05|15:54:03.174] Imported new chain segment               blocks=64 txs=0 mgas=0.000 elapsed=11.993ms  mgasps=0.000 number=160 hash=2a7cfc…d50b13 age=1m17s    cache=38.98kB
+INFO [11-05|15:54:05.096] Fast sync complete, auto disabling
+```
+
+我们在**节点一**终端中，输入下述命令查询：
+
+```shell
+> admin.peers
+```
+
+得到：
+
+```JSON
+[{
+    caps: ["eth/63"],
+    enode: "enode://fceb323e8d8f92a8b889285db9e7f5fe3c00e4d85bf5e7322f1f94be656a3e29b0fa568e05d3c3d5f651072e819f81f26e7a752e7960433a23b93d180d8ca642@[::]:30124?discport=0",
+    id: "537068799d08f5b45ac16bdbff980becac346ea950d425e09a59d0abc380b1d5",
+    name: "Geth/v1.8.17-stable-8bbe7207/windows-amd64/go1.11.1",
+    network: {
+      inbound: false,
+      localAddress: "127.0.0.1:59622",
+      remoteAddress: "127.0.0.1:30124",
+      static: true,
+      trusted: false
+    },
+    protocols: {
+      eth: {
+        difficulty: 21527596,
+        head: "0x2a7cfc52211a1494343a22290e48d6d981dc523f00ff703130e4301b8ed50b13",
+        version: 63
+      }
+    }
+}]
+```
+
+我们在**节点二**终端中，输入下述命令查询：
+
+```shell
+> admin.peers
+```
+
+得到：
+
+```shell
+[{
+    caps: ["eth/63"],
+    enode: "enode://4ca464d783599293ec60f92fad5182c48db0ccdcc68231e57a1b940d57b300f5ccf51e6b2c6b755fcded16b1074c9c8259776721cb1ea6daf104b692e6dd987a@127.0.0.1:59622",
+    id: "19303593965fd491889516973326aa77afd4e95fd301d94fdc669317818aad39",
+    name: "Geth/v1.8.17-stable-8bbe7207/windows-amd64/go1.11.1",
+    network: {
+      inbound: true,
+      localAddress: "127.0.0.1:30124",
+      remoteAddress: "127.0.0.1:59622",
+      static: false,
+      trusted: false
+    },
+    protocols: {
+      eth: {
+        difficulty: 20301042,
+        head: "0x27a59d8b4f715babdfbe83b506c11f580b2f6cacb5468fc422cb26bb7142903a",
+        version: 63
+      }
+    }
+}]
+```
+
+节点连接成功！
+
+### 04/ 跨节点转账
+
+我们分别在两个节点的终端中，创建账户，并挖矿。（参考上文，自己动手实践吧！）
+
+我们在**节点一**终端中，输入下述命令转账（账户已解锁）：
+
+```shell
+> eth.sendTransaction({from: eth.accounts[0], to:"0xc4eb9fd3973e29aa2d82d5241a75963bdb5501cc", value: 520})
+```
+
+得到提示：
+
+```shell
+INFO [11-05|15:59:22.226] Setting new local account                address=0x712Dc9360769a7ac0a72Adc521e343f895C9903D
+INFO [11-05|15:59:22.231] Submitted transaction                    fullhash=0xc178a91e7d631cb24a055429e2f459d31e3ac55d99480b2548af3a3e4b0819fb recipient=0xC4eb9fd3973E29aa2D82d5241A75963Bdb5501cC
+"0xc178a91e7d631cb24a055429e2f459d31e3ac55d99480b2548af3a3e4b0819fb"
+```
+
+开始挖矿，稍后，我们便可以在节点二中的账号查询到转的钱啦！
+
+***终端一**的账号
+
+```shell
+> web3.fromWei(eth.getBalance(eth.accounts[0]), "ether")
+194.99999999999999948
+```
+
+***终端二**的账号
+
+```shell
+> web3.fromWei(eth.getBalance(eth.accounts[0]), "ether")
+800.00000000000000052
+```
+
+***截至到现在，我们已经成功完成学习在私有链中，加入多节点。***
+
 ## 尾声
 
-至此，我们已经完成了创建一条私有链，操作私有链，部署智能合约并了解其中相关名词的含义的步骤。
+至此，我们已经完成了创建一条私有链，操作私有链，部署智能合约并在私有链中，加入多节点。
 
 **主要参考资料**
 
