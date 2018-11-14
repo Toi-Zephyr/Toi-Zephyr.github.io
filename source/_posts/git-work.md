@@ -38,24 +38,24 @@ go to repo
 
 push
 
-![](media/15415051995245/15415058249842.jpg)
+[a photo]
 
 we can see
 
-![](media/15415051995245/15415058355608.jpg)
+[a photo]
 
 ⚠️ remember to do this ! very important
 
-![](media/15415051995245/15415058607671.jpg)
+[a photo]
 
-![](media/15415051995245/15415058686523.jpg)
+[a photo]
 
-![](media/15415051995245/15415058779106.jpg)
+[a photo]
 
 add reviewers
 
 then pr
 
-![](media/15415051995245/15415059369410.jpg)
+[a photo]
 
 
