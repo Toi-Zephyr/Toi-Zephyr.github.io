@@ -11,7 +11,7 @@ toc: true
 
 本系列文章分为三部分。
 
-1. **初试Go服务 —— 入门了解使用 Go 编写一个简单的 web 服务器，即「Hello World」程序。**
+1. **[初试Go服务](https://zophyr.com/2018/11/11/go-web-serve-1/) —— 入门了解使用 Go 编写一个简单的 web 服务器，即「Hello World」程序。**
 2. GoWeb 小应用 —— 进阶了解 go 服务编程的种种细节。
 3. mux 源码分析及性能对比 —— 阅读 mux 的源码及分析对比各种由 go 编写的 http-routing 性能。
 
