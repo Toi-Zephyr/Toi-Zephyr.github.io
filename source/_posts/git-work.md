@@ -1,5 +1,5 @@
 ---
-title: git 分支合作教程
+title: git 分支合作教程（未完成）
 date: 2018-11-10 22:24:01
 description: Git 多人合作简要介绍
 categories: 教程
