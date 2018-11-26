@@ -3,7 +3,7 @@ title: 以太坊初体验 —— 建立一条私有链
 date: 2018-11-01 04:11:37
 description: 本文将带大家了解并尝试建立一条属于自己的私有链。
 categories: 教程
-tags: [环境配置, 教程, Go, hello-world]
+tags: [环境配置, 教程, eth, hello-world]
 toc: true
 ---
 
