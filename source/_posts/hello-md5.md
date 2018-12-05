@@ -1,6 +1,6 @@
 ---
 title: MD5 算法的设计与实现
-date: 2018-11-02 09:33:05
+date: 2018-12-01 11:02:11
 description: 学习实现一种常见的加密算法，感受密码学的趣味。
 categories: 教程
 tags: [教程, hello-world, MD5, 算法, 加密]
