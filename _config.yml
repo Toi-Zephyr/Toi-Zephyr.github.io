@@ -100,6 +100,7 @@ pagination_dir: page
 ## Themes: https://hexo.io/themes/
 
 theme: typography
+# theme: journal
 ## theme: landscape
 
 # Deployment
