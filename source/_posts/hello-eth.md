@@ -99,7 +99,7 @@ Version: 1.8.17-stable
         	"eip158Block": 0
     	},
     	"alloc": {},
-    	"difficulty": "20"
+    	"difficulty": "20",
     	"gasLimit": "80860000"
    }
    ```
