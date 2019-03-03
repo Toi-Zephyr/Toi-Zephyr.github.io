@@ -17,6 +17,11 @@ toc: true
 2. `vi`
     - 修改 Wi-Fi 文件配置
 
+3. 确认 Wi-Fi 已经开始
+    ```shell
+    $ sudo ip link set wlan0 up
+    ```
+
 ## 开始
 
 ### 生成配置文件
