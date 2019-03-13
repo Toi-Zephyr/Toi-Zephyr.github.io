@@ -80,6 +80,24 @@ $ dhclient wlan0
 $ ping zophyr.com
 ```
 
+### 设置静态 IP
 
+```shell
+$ vi /etc/network/interfaces
+```
+
+改成下方，需要根据自己的实际情况填写。
+
+```shell
+iface wlan0 inet static
+
+address 192.168.1.202
+
+netmask 255.255.255.0
+
+gateway 192.168.1.1
+
+dns-nameservers 114.114.114.114
+```
 
 
