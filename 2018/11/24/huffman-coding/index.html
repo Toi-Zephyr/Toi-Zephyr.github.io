@@ -1,0 +1,89 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta name="generator" content="Hexo 3.8.0"><meta charset="utf-8"><meta name="X-UA-Compatible" content="IE=edge"><meta name="author" content="Zephyr"><title>哈夫曼编码及动态编码初相识 · 迷楼</title><meta name="description" content="什么是哈夫曼编码
+哈夫曼编码是一种用于无损数据压缩的熵编码（权编码）算法。
+
+简单来说，哈夫曼编码就是根据某个符号出现的概率来对它进行特殊的编码——出现机率高的字母使用较短的编码，反之出现机率低的则使用较长的编码。因此，这可以使编码之后的字符串的平均长度、期望值降低，从而达到无损压缩数据的目的。
+举"><meta name="keywords" content="blog"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta name="renderer" content="webkit"><link rel="short icon" href="/images/favicon.png" type="image/x-icon"><link rel="stylesheet" href="/css/bootstrap.min.css"><link rel="stylesheet" href="/css/font-awesome.min.css"><link rel="stylesheet" href="/css/style.css"><link rel="alternate" type="application/atom+xml" title="ATOM 1.0" href="/atom.xml"></head><body><div id="stage" class="container"><div class="row"><div id="side-bar" class="col-sm-3 col-xs-12 side-container invisible"><div class="vertical-text site-title"><h3 tabindex="-1" class="site-title-small"><a href="/" class="a-title">後は野となれ山となれ</a></h3><h1 tabindex="-1" class="site-title-large"><a href="/" class="a-title">見ぬが花</a></h1><!--h6(onclick="triggerSiteNav()") Trigger--></div><br class="visible-lg visible-md visible-sm"><div id="site-nav" class="site-title-links"><ul><li><a href="/">首頁</a></li><li><a href="/archives">歸檔</a></li><li><a href="/categories">分類</a></li><li><a href="/tags">標籤</a></li><li><a href="/404.html">404</a></li><li><a href="/about/index.html">關於</a></li><li class="soc"><a href="https://github.com/Zophyr" target="_blank" rel="noopener noreferrer"><i class="fa fa-github">&nbsp;</i></a></li></ul><div class="visible-lg visible-md visible-sm site-nav-footer"><br class="site-nav-footer-br"><footer><p>&copy;&nbsp;2019&nbsp;<a target="_blank" href="http://zophyr.com" rel="noopener noreferrer">Zephyr</a></p></footer></div></div></div><div id="main-container" class="col-sm-9 col-xs-12 main-container invisible"><div class="autopagerize_page_element"><div class="content"><div class="post-page"><div class="post-container"><p class="post-title"><a>哈夫曼编码及动态编码初相识</a></p><p class="post-meta"><span class="date meta-item">發佈於&nbsp;2018-11-24</span><span class="meta-item"><i class="fa fa-folder"></i><span>&nbsp;</span><a href="/categories/算法/" title="算法" class="a-tag">算法</a><span>&nbsp;</span></span><span class="meta-item"><i class="fa fa-tag"></i><span>&nbsp;</span><a href="/tags/教程/" title="教程" class="a-tag">教程</a><span> / </span><a href="/tags/算法/" title="算法" class="a-tag">算法</a><span> / </span></span></p><p class="post-abstract"></p><h3 id="什么是哈夫曼编码"><a href="#什么是哈夫曼编码" class="headerlink" title="什么是哈夫曼编码"></a>什么是哈夫曼编码</h3><blockquote>
+<p>哈夫曼编码是一种用于无损数据压缩的熵编码（权编码）算法。</p>
+</blockquote>
+<p>简单来说，哈夫曼编码就是根据某个符号出现的概率来对它进行特殊的编码——<strong>出现机率高的字母使用较短的编码，反之出现机率低的则使用较长的编码</strong>。因此，这可以使编码之后的字符串的平均长度、期望值降低，从而达到无损压缩数据的目的。</p>
+<p>举个例子：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">字母</th>
+<th style="text-align:center">频率</th>
+<th style="text-align:center">编码</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">b</td>
+<td style="text-align:center">7</td>
+<td style="text-align:center">0</td>
+</tr>
+<tr>
+<td style="text-align:center">a</td>
+<td style="text-align:center">4</td>
+<td style="text-align:center">1</td>
+</tr>
+<tr>
+<td style="text-align:center">e</td>
+<td style="text-align:center">4</td>
+<td style="text-align:center">01</td>
+</tr>
+<tr>
+<td style="text-align:center">f</td>
+<td style="text-align:center">3</td>
+<td style="text-align:center">10</td>
+</tr>
+<tr>
+<td style="text-align:center">h</td>
+<td style="text-align:center">2</td>
+<td style="text-align:center">11</td>
+</tr>
+<tr>
+<td style="text-align:center">i</td>
+<td style="text-align:center">2</td>
+<td style="text-align:center">100</td>
+</tr>
+<tr>
+<td style="text-align:center">m</td>
+<td style="text-align:center">2</td>
+<td style="text-align:center">101</td>
+</tr>
+<tr>
+<td style="text-align:center">d</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">110</td>
+</tr>
+</tbody>
+</table>
+<p>在这个例子中 <code>b</code> 出现的概率最高，我们只用一个编码 <code>0</code> 来表示；而 <code>d</code> 出现的概率最小，我们用 <code>110</code> 三个编码来表示。</p>
+<p>我们假设在实际应用中，<code>b</code> 极有可能用一个比特来表示，而 <code>d</code> 则可能花去25个比特。用普通的表示方法时，每个英文字母均占用一个字节，即8个比特。二者相比，<code>b</code> 使用了一般编码的1/8的长度，<code>d</code> 则使用了3倍多。</p>
+<p>所以，如果我们能实现对于英文中各个字母出现概率的较准确的估算，就可以大幅度提高无损压缩的比例。</p>
+<h3 id="哈夫曼编码缺点"><a href="#哈夫曼编码缺点" class="headerlink" title="哈夫曼编码缺点"></a>哈夫曼编码缺点</h3><blockquote>
+<p>我们前面所说的哈夫曼编码都是静态的！</p>
+</blockquote>
+<p>基于静态哈夫曼编码树的算法对输入的符号流进行编码，必须进行两遍扫描。</p>
+<ol>
+<li><p>第一遍扫描统计被编码对象中符号出现的几率，并创建哈夫曼编码树。</p>
+</li>
+<li><p>第二遍扫描按照哈夫曼编码树对输入符号进行编码。并且在存储或传输哈夫曼编码结果之前，还必须先储存或传输哈夫曼编码树。</p>
+</li>
+</ol>
+<p><strong>这些问题导致静态哈夫曼编码树并不实用，尤其是对于短小的符号流来说，再加上哈夫曼编码树的编码结果在尺寸上很可能更大，甚至大出编码本身很多。</strong></p>
+<h3 id="动态哈夫曼编码"><a href="#动态哈夫曼编码" class="headerlink" title="动态哈夫曼编码"></a>动态哈夫曼编码</h3><blockquote>
+<p>动态哈夫曼编码，是基于哈夫曼编码的适自适应编码技术。</p>
+</blockquote>
+<p>它允许在符号正在传输时构建代码，允许一次编码并适应数据中变化的条件，即随着数据流的到达，动态地收集和更新符号的概率。</p>
+<p><strong>即它只用一遍扫描！</strong></p>
+<p>一遍扫描的好处是使得源程序可以实时编码，但由于单个丢失会损坏整个代码，因此它对传输错误更加敏感。</p>
+<p><strong>How to?</strong></p>
+<p>修改、或更新一棵哈夫曼树包括两个步骤。</p>
+<ol>
+<li><p>第一个步骤是频率次数的增加，先找到该叶子，把频率加一，在往上找他的父亲节点，也跟着加一，直到树根皆照着此步骤。</p>
+</li>
+<li><p>第二个步骤是如果增加加权值的动作使得兄弟性质不再满足时，必须做调整的动作，借由交换叶子改变频率增加的顺序，同时，交换位置后的父亲节点加权值也要跟着更新，以此原则使之再度成为哈夫曼树。</p>
+</li>
+</ol>
+<p></p></div><div class="share"><span>分享到</span>&nbsp;<span class="soc"><a href="javascript:(function(){EN_CLIP_HOST='http://www.evernote.com';try{var%20x=document.createElement('SCRIPT');x.type='text/javascript';x.src=EN_CLIP_HOST+'/public/bookmarkClipper.js?'+(new%20Date().getTime()/100000);document.getElementsByTagName('head')[0].appendChild(x);}catch(e){location.href=EN_CLIP_HOST+'/clip.action?url='+encodeURIComponent(location.href)+'&amp;title='+encodeURIComponent(document.title);}})();" ref="nofollow" target="_blank" class="fa fa-bookmark"></a></span><span class="soc"><a href="javascript:void((function(s,d,e){try{}catch(e){}var f='http://service.weibo.com/share/share.php?',u=d.location.href,p=['url=',e(u),'&amp;title=',e(d.title),'&amp;appkey=2924220432'].join('');function a(){if(!window.open([f,p].join(''),'mb',['toolbar=0,status=0,resizable=1,width=620,height=450,left=',(s.width-620)/2,',top=',(s.height-450)/2].join('')))u.href=[f,p].join('');};if(/Firefox/.test(navigator.userAgent)){setTimeout(a,0)}else{a()}})(screen,document,encodeURIComponent));" class="fa fa-weibo"></a></span><span class="soc"><a href="http://twitter.com/home?status=http://zophyr.com/2018/11/24/huffman-coding/%20迷楼%20哈夫曼编码及动态编码初相识" class="fa fa-twitter"></a></span></div><div class="pagination"><p class="clearfix"><span class="pre pagbuttons"><a role="navigation" href="/2018/12/01/hello-md5/" title="MD5 算法的设计与实现"><i class="fa fa-angle-double-left"></i>&nbsp;上一篇: MD5 算法的设计与实现</a></span><span> / </span><span class="next pagbuttons"><a role="navigation" href="/2018/11/20/dapp-learning-1/" title="Dapp 开发学习（未完成）">下一篇: Dapp 开发学习（未完成）&nbsp;<i class="fa fa-angle-double-right"></i></a></span></p></div></div></div></div><div class="visible-xs site-bottom-footer"><footer><p>&copy;&nbsp;2019&nbsp;<a target="_blank" href="http://zophyr.com" rel="noopener noreferrer">Zephyr</a></p></footer></div></div></div></div><script src="/js/jquery-3.1.0.min.js"></script><script src="/js/bootstrap.min.js"></script><script src="/js/jquery-migrate-1.2.1.min.js"></script><script src="/js/jquery.appear.js"></script><script src="/js/google-analytics.js"></script><script src="/js/typography.js"></script></body></html>

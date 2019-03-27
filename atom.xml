@@ -1,0 +1,513 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>迷楼</title>
+  
+  <subtitle>Save my life.</subtitle>
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="http://zophyr.com/"/>
+  <updated>2019-03-27T10:00:37.564Z</updated>
+  <id>http://zophyr.com/</id>
+  
+  <author>
+    <name>Zephyr</name>
+    
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>JavaScript 中的防抖与节流</title>
+    <link href="http://zophyr.com/2019/03/24/debounce-throttle/"/>
+    <id>http://zophyr.com/2019/03/24/debounce-throttle/</id>
+    <published>2019-03-24T00:53:02.000Z</published>
+    <updated>2019-03-27T10:00:37.564Z</updated>
+    
+    <summary type="html">
+    
+      防抖与节流都是为了限制事件的频繁触发，控制函数的执行次数。
+    
+    </summary>
+    
+      <category term="教程" scheme="http://zophyr.com/categories/%E6%95%99%E7%A8%8B/"/>
+    
+    
+      <category term="JavaScript" scheme="http://zophyr.com/tags/JavaScript/"/>
+    
+      <category term="函数" scheme="http://zophyr.com/tags/%E5%87%BD%E6%95%B0/"/>
+    
+      <category term="防抖" scheme="http://zophyr.com/tags/%E9%98%B2%E6%8A%96/"/>
+    
+      <category term="节流" scheme="http://zophyr.com/tags/%E8%8A%82%E6%B5%81/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>数组扁平化的 3.5 种方法</title>
+    <link href="http://zophyr.com/2019/03/23/array-flatten/"/>
+    <id>http://zophyr.com/2019/03/23/array-flatten/</id>
+    <published>2019-03-23T07:33:10.000Z</published>
+    <updated>2019-03-27T08:48:19.411Z</updated>
+    
+    <summary type="html">
+    
+      将一个多维数组变为一维数组。
+    
+    </summary>
+    
+      <category term="教程" scheme="http://zophyr.com/categories/%E6%95%99%E7%A8%8B/"/>
+    
+    
+      <category term="JavaScript" scheme="http://zophyr.com/tags/JavaScript/"/>
+    
+      <category term="数组" scheme="http://zophyr.com/tags/%E6%95%B0%E7%BB%84/"/>
+    
+      <category term="算法" scheme="http://zophyr.com/tags/%E7%AE%97%E6%B3%95/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Linux 开启 SSH</title>
+    <link href="http://zophyr.com/2019/03/03/linux-ssh/"/>
+    <id>http://zophyr.com/2019/03/03/linux-ssh/</id>
+    <published>2019-03-03T11:54:02.000Z</published>
+    <updated>2019-03-27T06:28:23.097Z</updated>
+    
+    <summary type="html">
+    
+      开启 SSH 以进行远程操控
+    
+    </summary>
+    
+      <category term="教程" scheme="http://zophyr.com/categories/%E6%95%99%E7%A8%8B/"/>
+    
+    
+      <category term="教程" scheme="http://zophyr.com/tags/%E6%95%99%E7%A8%8B/"/>
+    
+      <category term="命令行" scheme="http://zophyr.com/tags/%E5%91%BD%E4%BB%A4%E8%A1%8C/"/>
+    
+      <category term="树莓派" scheme="http://zophyr.com/tags/%E6%A0%91%E8%8E%93%E6%B4%BE/"/>
+    
+      <category term="Ubuntu" scheme="http://zophyr.com/tags/Ubuntu/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>制作64位的树莓派</title>
+    <link href="http://zophyr.com/2019/03/03/make-raspbian/"/>
+    <id>http://zophyr.com/2019/03/03/make-raspbian/</id>
+    <published>2019-03-03T11:37:59.000Z</published>
+    <updated>2019-03-27T06:28:23.097Z</updated>
+    
+    <summary type="html">
+    
+      为树莓派安装64位的 Ubuntu 系统
+    
+    </summary>
+    
+      <category term="教程" scheme="http://zophyr.com/categories/%E6%95%99%E7%A8%8B/"/>
+    
+    
+      <category term="教程" scheme="http://zophyr.com/tags/%E6%95%99%E7%A8%8B/"/>
+    
+      <category term="命令行" scheme="http://zophyr.com/tags/%E5%91%BD%E4%BB%A4%E8%A1%8C/"/>
+    
+      <category term="树莓派" scheme="http://zophyr.com/tags/%E6%A0%91%E8%8E%93%E6%B4%BE/"/>
+    
+      <category term="Ubuntu" scheme="http://zophyr.com/tags/Ubuntu/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>命令行链接 WPA Wi-Fi</title>
+    <link href="http://zophyr.com/2019/03/03/term-wifi/"/>
+    <id>http://zophyr.com/2019/03/03/term-wifi/</id>
+    <published>2019-03-03T02:25:44.000Z</published>
+    <updated>2019-03-27T06:28:23.098Z</updated>
+    
+    <summary type="html">
+    
+      使用命令行命令链接Wi-Fi
+    
+    </summary>
+    
+      <category term="教程" scheme="http://zophyr.com/categories/%E6%95%99%E7%A8%8B/"/>
+    
+    
+      <category term="教程" scheme="http://zophyr.com/tags/%E6%95%99%E7%A8%8B/"/>
+    
+      <category term="命令行" scheme="http://zophyr.com/tags/%E5%91%BD%E4%BB%A4%E8%A1%8C/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>在树莓派上安装 Geth</title>
+    <link href="http://zophyr.com/2019/03/03/eth-in-raspbian/"/>
+    <id>http://zophyr.com/2019/03/03/eth-in-raspbian/</id>
+    <published>2019-03-03T02:25:44.000Z</published>
+    <updated>2019-03-27T06:28:23.093Z</updated>
+    
+    <summary type="html">
+    
+      树莓派 + 以太坊 —— 学习如何在树莓派上安装运行以太坊
+    
+    </summary>
+    
+      <category term="教程" scheme="http://zophyr.com/categories/%E6%95%99%E7%A8%8B/"/>
+    
+    
+      <category term="教程" scheme="http://zophyr.com/tags/%E6%95%99%E7%A8%8B/"/>
+    
+      <category term="命令行" scheme="http://zophyr.com/tags/%E5%91%BD%E4%BB%A4%E8%A1%8C/"/>
+    
+      <category term="以太坊" scheme="http://zophyr.com/tags/%E4%BB%A5%E5%A4%AA%E5%9D%8A/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>引号间的小区别</title>
+    <link href="http://zophyr.com/2019/03/01/quotation-marks/"/>
+    <id>http://zophyr.com/2019/03/01/quotation-marks/</id>
+    <published>2019-03-01T03:30:02.000Z</published>
+    <updated>2019-03-27T06:28:23.098Z</updated>
+    
+    <summary type="html">
+    
+      单引号与双引号在 C++ 中的区别。
+    
+    </summary>
+    
+      <category term="教程" scheme="http://zophyr.com/categories/%E6%95%99%E7%A8%8B/"/>
+    
+    
+      <category term="教程" scheme="http://zophyr.com/tags/%E6%95%99%E7%A8%8B/"/>
+    
+      <category term="Cpp" scheme="http://zophyr.com/tags/Cpp/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>将 LeetCode 代码同步到 GitHub</title>
+    <link href="http://zophyr.com/2019/02/27/leethub/"/>
+    <id>http://zophyr.com/2019/02/27/leethub/</id>
+    <published>2019-02-27T14:19:33.000Z</published>
+    <updated>2019-03-27T06:28:23.097Z</updated>
+    
+    <summary type="html">
+    
+      三分钟：让 GitHub 与 LeetCode 在一起
+    
+    </summary>
+    
+      <category term="教程" scheme="http://zophyr.com/categories/%E6%95%99%E7%A8%8B/"/>
+    
+    
+      <category term="教程" scheme="http://zophyr.com/tags/%E6%95%99%E7%A8%8B/"/>
+    
+      <category term="Git" scheme="http://zophyr.com/tags/Git/"/>
+    
+      <category term="LeetCode" scheme="http://zophyr.com/tags/LeetCode/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>gRPC 初体验</title>
+    <link href="http://zophyr.com/2019/01/17/gRPC/"/>
+    <id>http://zophyr.com/2019/01/17/gRPC/</id>
+    <published>2019-01-17T03:04:03.000Z</published>
+    <updated>2019-03-27T06:28:23.093Z</updated>
+    
+    <summary type="html">
+    
+      gRPC 简单上手体验
+    
+    </summary>
+    
+      <category term="gRPC" scheme="http://zophyr.com/categories/gRPC/"/>
+    
+    
+      <category term="gRPC" scheme="http://zophyr.com/tags/gRPC/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>新年。</title>
+    <link href="http://zophyr.com/2019/01/01/2019/"/>
+    <id>http://zophyr.com/2019/01/01/2019/</id>
+    <published>2018-12-31T16:00:01.000Z</published>
+    <updated>2019-03-27T06:28:23.091Z</updated>
+    
+    <summary type="html">
+    
+      新年快乐。
+    
+    </summary>
+    
+      <category term="新年" scheme="http://zophyr.com/categories/%E6%96%B0%E5%B9%B4/"/>
+    
+    
+      <category term="2019" scheme="http://zophyr.com/tags/2019/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Docker 使用初体验</title>
+    <link href="http://zophyr.com/2018/12/20/hello-docker/"/>
+    <id>http://zophyr.com/2018/12/20/hello-docker/</id>
+    <published>2018-12-20T10:12:22.000Z</published>
+    <updated>2019-03-27T06:28:23.095Z</updated>
+    
+    <summary type="html">
+    
+      “不落地”云软件开发流水线实战第一步
+    
+    </summary>
+    
+      <category term="教程" scheme="http://zophyr.com/categories/%E6%95%99%E7%A8%8B/"/>
+    
+    
+      <category term="教程" scheme="http://zophyr.com/tags/%E6%95%99%E7%A8%8B/"/>
+    
+      <category term="hello-world" scheme="http://zophyr.com/tags/hello-world/"/>
+    
+      <category term="docker" scheme="http://zophyr.com/tags/docker/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>设计 API 小结</title>
+    <link href="http://zophyr.com/2018/12/11/api-design/"/>
+    <id>http://zophyr.com/2018/12/11/api-design/</id>
+    <published>2018-12-10T18:48:41.000Z</published>
+    <updated>2019-03-27T06:28:23.092Z</updated>
+    
+    <summary type="html">
+    
+      比较两种常见的 API 风格 —— RESTful &amp; GraphQL，根据需求选择合适的风格。
+    
+    </summary>
+    
+      <category term="教程" scheme="http://zophyr.com/categories/%E6%95%99%E7%A8%8B/"/>
+    
+    
+      <category term="教程" scheme="http://zophyr.com/tags/%E6%95%99%E7%A8%8B/"/>
+    
+      <category term="hello-world" scheme="http://zophyr.com/tags/hello-world/"/>
+    
+      <category term="RESTful" scheme="http://zophyr.com/tags/RESTful/"/>
+    
+      <category term="GraphQL" scheme="http://zophyr.com/tags/GraphQL/"/>
+    
+      <category term="API" scheme="http://zophyr.com/tags/API/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>x.509 证书阅读与解析</title>
+    <link href="http://zophyr.com/2018/12/08/x509/"/>
+    <id>http://zophyr.com/2018/12/08/x509/</id>
+    <published>2018-12-08T02:08:22.000Z</published>
+    <updated>2019-03-27T06:28:23.099Z</updated>
+    
+    <summary type="html">
+    
+      学习如何阅读解析基于 x.509 协议的证书。
+    
+    </summary>
+    
+      <category term="教程" scheme="http://zophyr.com/categories/%E6%95%99%E7%A8%8B/"/>
+    
+    
+      <category term="教程" scheme="http://zophyr.com/tags/%E6%95%99%E7%A8%8B/"/>
+    
+      <category term="hello-world" scheme="http://zophyr.com/tags/hello-world/"/>
+    
+      <category term="算法" scheme="http://zophyr.com/tags/%E7%AE%97%E6%B3%95/"/>
+    
+      <category term="x.509" scheme="http://zophyr.com/tags/x-509/"/>
+    
+      <category term="加密" scheme="http://zophyr.com/tags/%E5%8A%A0%E5%AF%86/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>创建并发布一个 python 包</title>
+    <link href="http://zophyr.com/2018/12/04/how-to-own-a-pypi/"/>
+    <id>http://zophyr.com/2018/12/04/how-to-own-a-pypi/</id>
+    <published>2018-12-03T18:22:08.000Z</published>
+    <updated>2019-03-27T06:28:23.096Z</updated>
+    
+    <summary type="html">
+    
+      创建并发布一个 python 包.
+    
+    </summary>
+    
+      <category term="教程" scheme="http://zophyr.com/categories/%E6%95%99%E7%A8%8B/"/>
+    
+    
+      <category term="教程" scheme="http://zophyr.com/tags/%E6%95%99%E7%A8%8B/"/>
+    
+      <category term="hello-world" scheme="http://zophyr.com/tags/hello-world/"/>
+    
+      <category term="python" scheme="http://zophyr.com/tags/python/"/>
+    
+      <category term="pypi" scheme="http://zophyr.com/tags/pypi/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>MD5 算法的设计与实现</title>
+    <link href="http://zophyr.com/2018/12/01/hello-md5/"/>
+    <id>http://zophyr.com/2018/12/01/hello-md5/</id>
+    <published>2018-12-01T03:02:11.000Z</published>
+    <updated>2019-03-27T06:28:23.096Z</updated>
+    
+    <summary type="html">
+    
+      学习实现一种常见的加密算法，感受密码学的趣味。
+    
+    </summary>
+    
+      <category term="教程" scheme="http://zophyr.com/categories/%E6%95%99%E7%A8%8B/"/>
+    
+    
+      <category term="教程" scheme="http://zophyr.com/tags/%E6%95%99%E7%A8%8B/"/>
+    
+      <category term="hello-world" scheme="http://zophyr.com/tags/hello-world/"/>
+    
+      <category term="算法" scheme="http://zophyr.com/tags/%E7%AE%97%E6%B3%95/"/>
+    
+      <category term="加密" scheme="http://zophyr.com/tags/%E5%8A%A0%E5%AF%86/"/>
+    
+      <category term="MD5" scheme="http://zophyr.com/tags/MD5/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>哈夫曼编码及动态编码初相识</title>
+    <link href="http://zophyr.com/2018/11/24/huffman-coding/"/>
+    <id>http://zophyr.com/2018/11/24/huffman-coding/</id>
+    <published>2018-11-24T05:51:06.000Z</published>
+    <updated>2019-03-27T06:28:23.097Z</updated>
+    
+    <summary type="html">
+    
+      了解认识哈夫曼编码及哈夫曼动态编码。
+    
+    </summary>
+    
+      <category term="算法" scheme="http://zophyr.com/categories/%E7%AE%97%E6%B3%95/"/>
+    
+    
+      <category term="教程" scheme="http://zophyr.com/tags/%E6%95%99%E7%A8%8B/"/>
+    
+      <category term="算法" scheme="http://zophyr.com/tags/%E7%AE%97%E6%B3%95/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Dapp 开发学习（未完成）</title>
+    <link href="http://zophyr.com/2018/11/20/dapp-learning-1/"/>
+    <id>http://zophyr.com/2018/11/20/dapp-learning-1/</id>
+    <published>2018-11-19T23:14:50.000Z</published>
+    <updated>2019-03-27T06:28:23.093Z</updated>
+    
+    <summary type="html">
+    
+      学习开发智能合约应用
+    
+    </summary>
+    
+      <category term="教程" scheme="http://zophyr.com/categories/%E6%95%99%E7%A8%8B/"/>
+    
+    
+      <category term="教程" scheme="http://zophyr.com/tags/%E6%95%99%E7%A8%8B/"/>
+    
+      <category term="hello-world" scheme="http://zophyr.com/tags/hello-world/"/>
+    
+      <category term="环境配置" scheme="http://zophyr.com/tags/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/"/>
+    
+      <category term="eth" scheme="http://zophyr.com/tags/eth/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>mux 源码分析及性能对比</title>
+    <link href="http://zophyr.com/2018/11/11/go-web-serve-3/"/>
+    <id>http://zophyr.com/2018/11/11/go-web-serve-3/</id>
+    <published>2018-11-11T09:19:11.000Z</published>
+    <updated>2019-03-27T06:28:23.094Z</updated>
+    
+    <summary type="html">
+    
+      使用 Go 编写 web 后台服务 —— 系列文章之三
+    
+    </summary>
+    
+      <category term="教程" scheme="http://zophyr.com/categories/%E6%95%99%E7%A8%8B/"/>
+    
+    
+      <category term="Go" scheme="http://zophyr.com/tags/Go/"/>
+    
+      <category term="web" scheme="http://zophyr.com/tags/web/"/>
+    
+      <category term="后台服务" scheme="http://zophyr.com/tags/%E5%90%8E%E5%8F%B0%E6%9C%8D%E5%8A%A1/"/>
+    
+      <category term="源码阅读" scheme="http://zophyr.com/tags/%E6%BA%90%E7%A0%81%E9%98%85%E8%AF%BB/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>初试 Go 服务</title>
+    <link href="http://zophyr.com/2018/11/11/go-web-serve-1/"/>
+    <id>http://zophyr.com/2018/11/11/go-web-serve-1/</id>
+    <published>2018-11-11T09:08:56.000Z</published>
+    <updated>2019-03-27T06:28:23.094Z</updated>
+    
+    <summary type="html">
+    
+      使用 Go 编写 web 后台服务 —— 系列文章之一
+    
+    </summary>
+    
+      <category term="教程" scheme="http://zophyr.com/categories/%E6%95%99%E7%A8%8B/"/>
+    
+    
+      <category term="教程" scheme="http://zophyr.com/tags/%E6%95%99%E7%A8%8B/"/>
+    
+      <category term="hello-world" scheme="http://zophyr.com/tags/hello-world/"/>
+    
+      <category term="Go" scheme="http://zophyr.com/tags/Go/"/>
+    
+      <category term="web" scheme="http://zophyr.com/tags/web/"/>
+    
+      <category term="后台服务" scheme="http://zophyr.com/tags/%E5%90%8E%E5%8F%B0%E6%9C%8D%E5%8A%A1/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>git 分支合作教程（未完成）</title>
+    <link href="http://zophyr.com/2018/11/10/git-work/"/>
+    <id>http://zophyr.com/2018/11/10/git-work/</id>
+    <published>2018-11-10T14:24:01.000Z</published>
+    <updated>2019-03-27T06:28:23.094Z</updated>
+    
+    <summary type="html">
+    
+      Git 多人合作简要介绍
+    
+    </summary>
+    
+      <category term="教程" scheme="http://zophyr.com/categories/%E6%95%99%E7%A8%8B/"/>
+    
+    
+      <category term="教程" scheme="http://zophyr.com/tags/%E6%95%99%E7%A8%8B/"/>
+    
+      <category term="环境配置" scheme="http://zophyr.com/tags/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/"/>
+    
+      <category term="Git" scheme="http://zophyr.com/tags/Git/"/>
+    
+  </entry>
+  
+</feed>

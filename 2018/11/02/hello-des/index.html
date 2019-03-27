@@ -1,0 +1,137 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta name="generator" content="Hexo 3.8.0"><meta charset="utf-8"><meta name="X-UA-Compatible" content="IE=edge"><meta name="author" content="Zephyr"><title>DES的设计与实现 · 迷楼</title><meta name="description" content="DES算法设计及实现算法设计DES加密算法的核心流程，我们可以理解为五个步骤：
+
+明文输入
+IP置换
+T迭代
+IP逆置换
+密文输出
+
+其中，最为复杂的为T迭代，T迭代中包括：
+
+16次循环迭代
+上下半区交换
+密匙调度压缩
+PC1、PC2压缩交换
+循环位移
+Feistel 轮函数
+
+因此，我们的算法设"><meta name="keywords" content="blog"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta name="renderer" content="webkit"><link rel="short icon" href="/images/favicon.png" type="image/x-icon"><link rel="stylesheet" href="/css/bootstrap.min.css"><link rel="stylesheet" href="/css/font-awesome.min.css"><link rel="stylesheet" href="/css/style.css"><link rel="alternate" type="application/atom+xml" title="ATOM 1.0" href="/atom.xml"></head><body><div id="stage" class="container"><div class="row"><div id="side-bar" class="col-sm-3 col-xs-12 side-container invisible"><div class="vertical-text site-title"><h3 tabindex="-1" class="site-title-small"><a href="/" class="a-title">後は野となれ山となれ</a></h3><h1 tabindex="-1" class="site-title-large"><a href="/" class="a-title">見ぬが花</a></h1><!--h6(onclick="triggerSiteNav()") Trigger--></div><br class="visible-lg visible-md visible-sm"><div id="site-nav" class="site-title-links"><ul><li><a href="/">首頁</a></li><li><a href="/archives">歸檔</a></li><li><a href="/categories">分類</a></li><li><a href="/tags">標籤</a></li><li><a href="/404.html">404</a></li><li><a href="/about/index.html">關於</a></li><li class="soc"><a href="https://github.com/Zophyr" target="_blank" rel="noopener noreferrer"><i class="fa fa-github">&nbsp;</i></a></li></ul><div class="visible-lg visible-md visible-sm site-nav-footer"><br class="site-nav-footer-br"><footer><p>&copy;&nbsp;2019&nbsp;<a target="_blank" href="http://zophyr.com" rel="noopener noreferrer">Zephyr</a></p></footer></div></div></div><div id="main-container" class="col-sm-9 col-xs-12 main-container invisible"><div class="autopagerize_page_element"><div class="content"><div class="post-page"><div class="post-container"><p class="post-title"><a>DES的设计与实现</a></p><p class="post-meta"><span class="date meta-item">發佈於&nbsp;2018-11-02</span><span class="meta-item"><i class="fa fa-folder"></i><span>&nbsp;</span><a href="/categories/教程/" title="教程" class="a-tag">教程</a><span>&nbsp;</span></span><span class="meta-item"><i class="fa fa-tag"></i><span>&nbsp;</span><a href="/tags/教程/" title="教程" class="a-tag">教程</a><span> / </span><a href="/tags/hello-world/" title="hello-world" class="a-tag">hello-world</a><span> / </span><a href="/tags/算法/" title="算法" class="a-tag">算法</a><span> / </span><a href="/tags/DES/" title="DES" class="a-tag">DES</a><span> / </span></span></p><p class="post-abstract"></p><h1 id="DES算法设计及实现"><a href="#DES算法设计及实现" class="headerlink" title="DES算法设计及实现"></a>DES算法设计及实现</h1><h2 id="算法设计"><a href="#算法设计" class="headerlink" title="算法设计"></a>算法设计</h2><p>DES加密算法的核心流程，我们可以理解为五个步骤：</p>
+<ol>
+<li><strong>明文输入</strong></li>
+<li><strong>IP置换</strong></li>
+<li><strong>T迭代</strong></li>
+<li><strong>IP逆置换</strong></li>
+<li><strong>密文输出</strong></li>
+</ol>
+<p>其中，最为复杂的为<strong>T迭代</strong>，T迭代中包括：</p>
+<ul>
+<li>16次循环迭代</li>
+<li>上下半区交换</li>
+<li>密匙调度压缩</li>
+<li>PC1、PC2压缩交换</li>
+<li>循环位移</li>
+<li>Feistel 轮函数</li>
+</ul>
+<p>因此，我们的算法设计将分为四个部分</p>
+<ol>
+<li>明文输入输出</li>
+<li>IP置换</li>
+<li>T迭代</li>
+<li>IP逆置换</li>
+</ol>
+<p>即目录文件结构为：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">.</span><br><span class="line">├── DES.h   # DES 算法</span><br><span class="line">├── IPIP.h  # IP逆置换</span><br><span class="line">├── IPP.h   # IP置换</span><br><span class="line">├── TI.h    # T迭代</span><br><span class="line">├── main.cpp    # 文件输入输出及测试</span><br><span class="line">└── util.h  # 置换表以及相关运算函数</span><br></pre></td></tr></table></figure>
+<h3 id="前期准备-——-util-h"><a href="#前期准备-——-util-h" class="headerlink" title="前期准备 —— util.h"></a>前期准备 —— <code>util.h</code></h3><p>在 <code>util.h</code> 中，我们含有以下置换表：</p>
+<table>
+<thead>
+<tr>
+<th>表名</th>
+<th>变量名</th>
+<th>类型</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>IP 置换表</td>
+<td>IP_Init_Table[64]</td>
+<td>int</td>
+</tr>
+<tr>
+<td>IP 逆置换表</td>
+<td>IPR_Table[64]</td>
+<td>int</td>
+</tr>
+<tr>
+<td>E 扩展表</td>
+<td>E_Table[48]</td>
+<td>int</td>
+</tr>
+<tr>
+<td>P 盒</td>
+<td>P_Table[32]</td>
+<td>int</td>
+</tr>
+<tr>
+<td>PC1 压缩置换表</td>
+<td>PC1_Table[56]</td>
+<td>int</td>
+</tr>
+<tr>
+<td>PC2 压缩置换表</td>
+<td>PC2_Table[48]</td>
+<td>int</td>
+</tr>
+<tr>
+<td>S 盒</td>
+<td>S_Box[8][4][16]</td>
+<td>int</td>
+</tr>
+</tbody>
+</table>
+<p>在 <code>util.h</code> 中，我们含有以下工具函数：</p>
+<ul>
+<li>字符转二进制: <code>void CharToBit(char input[], int output[])</code></li>
+<li>二进制转字符: <code>void BitToChar(int intput[], char output[])</code></li>
+<li>异或操作: <code>void Xor(int *INA, int *INB, int len)</code></li>
+</ul>
+<h3 id="IP置换部分-——-IPP-h"><a href="#IP置换部分-——-IPP-h" class="headerlink" title="IP置换部分 —— IPP.h"></a>IP置换部分 —— <code>IPP.h</code></h3><p><code>void IP_Init_Rep(int input[64], int output[64], int table[64])</code></p>
+<p>该函数根据表（table）中的规定，将输入的 64 位明文重新进行排序，即将第 58 位放到第 1 位，第 50 位放到第 2 位……以此类推。初始置换以后得到的是一个 64 位的输出。</p>
+<h3 id="T迭代部分-——-TI-h"><a href="#T迭代部分-——-TI-h" class="headerlink" title="T迭代部分 —— TI.h"></a>T迭代部分 —— <code>TI.h</code></h3><h4 id="PC1压缩置换"><a href="#PC1压缩置换" class="headerlink" title="PC1压缩置换"></a>PC1压缩置换</h4><blockquote>
+<p><code>void PC_1(int input[64], int output[56], int table[56])</code></p>
+</blockquote>
+<p>用户输出的密钥是 64 位的，根据密钥置换表PC-1，将 64 位变成 56 位密钥。（去掉了奇偶校验位）</p>
+<h4 id="循环位移"><a href="#循环位移" class="headerlink" title="循环位移"></a>循环位移</h4><blockquote>
+<p><code>void RotateL(int input[28], int output[28], int leftCount)</code></p>
+</blockquote>
+<p>将 PC-1 置换得到的 56 位密钥，分为前28位 C0 和后28位 D0，分别对它们进行循环左移，C0左移得到 C1，D0 左移得到 D1。</p>
+<h4 id="PC2压缩置换"><a href="#PC2压缩置换" class="headerlink" title="PC2压缩置换"></a>PC2压缩置换</h4><blockquote>
+<p><code>void PC_2(int input[56], int output[48], int table[48])</code></p>
+</blockquote>
+<p>将 C1 和 D1 合并成 56 位，然后通过PC-2表进行压缩置换，得到当前这一轮的 48 位子密钥 K1 。</p>
+<h4 id="子密匙循环"><a href="#子密匙循环" class="headerlink" title="子密匙循环"></a>子密匙循环</h4><blockquote>
+<p><code>void subKey_fun(int input[64], int subKey[16][48])</code></p>
+</blockquote>
+<p>然后对 C1 和 D1 进行左移和压缩置换，获取下一轮的子密钥……一共进行16轮，得到 16 个 48 位的子密钥。</p>
+<h4 id="密码函数"><a href="#密码函数" class="headerlink" title="密码函数"></a>密码函数</h4><blockquote>
+<p><code>void F_func(int input[32], int output[32], int subKey[48])</code></p>
+</blockquote>
+<p>密码函数f(R, K)接受两个输入：32 位的数据和 48 位的子密钥。</p>
+<h4 id="E置换"><a href="#E置换" class="headerlink" title="E置换"></a>E置换</h4><blockquote>
+<p><code>void E_Extend(int input[32], int output[48], int table[48])</code></p>
+</blockquote>
+<p>通过表 E 进行扩展置换，将输入的 32 位数据扩展为 48 位；</p>
+<h4 id="s-box分组"><a href="#s-box分组" class="headerlink" title="s-box分组"></a>s-box分组</h4><blockquote>
+<p><code>void S_Comp(int input[48], int output[32], int table[8][4][16])</code></p>
+</blockquote>
+<p>根据S盒进行置换</p>
+<h4 id="P置换"><a href="#P置换" class="headerlink" title="P置换"></a>P置换</h4><blockquote>
+<p><code>void P_Rep(int input[32], int output[32], int table[32])</code></p>
+</blockquote>
+<p>把通过 S 表置换得到的 8 个 4 位连在一起，形成一个 32 位的数据。然后将该 32 位数据通过表 P 进行置换（称为P-置换），置换后得到一个仍然是 32 位的结果数据，这就是f(R, K)函数的输出</p>
+<h3 id="IP逆置换部分-——-IPIP-h"><a href="#IP逆置换部分-——-IPIP-h" class="headerlink" title="IP逆置换部分 —— IPIP.h"></a>IP逆置换部分 —— <code>IPIP.h</code></h3><blockquote>
+<p><code>void IP_Inv_Rep(int input[64], int output[64], int table[64])</code></p>
+</blockquote>
+<p>合并 L16 和 R16 得到一个 64 位的数据，再经过尾置换后得到的就是 64 位的密文。注意：要将 L16和 R16 合并成 R16L16（即左右互换）。</p>
+<h3 id="DES算法部分-——-DES-h"><a href="#DES算法部分-——-DES-h" class="headerlink" title="DES算法部分 —— DES.h"></a>DES算法部分 —— <code>DES.h</code></h3><p>在该部分进行上述部分的整合，并进行循环，可以达到解密和加密的效果。</p>
+<h2 id="彩蛋"><a href="#彩蛋" class="headerlink" title="彩蛋"></a>彩蛋</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">0010 0110</span><br><span class="line">1001 1111</span><br><span class="line">0000 1011</span><br><span class="line">0010 1010</span><br><span class="line">1001 0100</span><br><span class="line">0101 1100</span><br><span class="line">1100 1110</span><br><span class="line">1110 0010</span><br></pre></td></tr></table></figure>
+<p></p></div><div class="share"><span>分享到</span>&nbsp;<span class="soc"><a href="javascript:(function(){EN_CLIP_HOST='http://www.evernote.com';try{var%20x=document.createElement('SCRIPT');x.type='text/javascript';x.src=EN_CLIP_HOST+'/public/bookmarkClipper.js?'+(new%20Date().getTime()/100000);document.getElementsByTagName('head')[0].appendChild(x);}catch(e){location.href=EN_CLIP_HOST+'/clip.action?url='+encodeURIComponent(location.href)+'&amp;title='+encodeURIComponent(document.title);}})();" ref="nofollow" target="_blank" class="fa fa-bookmark"></a></span><span class="soc"><a href="javascript:void((function(s,d,e){try{}catch(e){}var f='http://service.weibo.com/share/share.php?',u=d.location.href,p=['url=',e(u),'&amp;title=',e(d.title),'&amp;appkey=2924220432'].join('');function a(){if(!window.open([f,p].join(''),'mb',['toolbar=0,status=0,resizable=1,width=620,height=450,left=',(s.width-620)/2,',top=',(s.height-450)/2].join('')))u.href=[f,p].join('');};if(/Firefox/.test(navigator.userAgent)){setTimeout(a,0)}else{a()}})(screen,document,encodeURIComponent));" class="fa fa-weibo"></a></span><span class="soc"><a href="http://twitter.com/home?status=http://zophyr.com/2018/11/02/hello-des/%20迷楼%20DES的设计与实现" class="fa fa-twitter"></a></span></div><div class="pagination"><p class="clearfix"><span class="pre pagbuttons"><a role="navigation" href="/2018/11/10/git-work/" title="git 分支合作教程（未完成）"><i class="fa fa-angle-double-left"></i>&nbsp;上一篇: git 分支合作教程（未完成）</a></span><span> / </span><span class="next pagbuttons"><a role="navigation" href="/2018/11/01/hello-eth/" title="以太坊初体验 —— 建立一条私有链">下一篇: 以太坊初体验 —— 建立一条私有链&nbsp;<i class="fa fa-angle-double-right"></i></a></span></p></div></div></div></div><div class="visible-xs site-bottom-footer"><footer><p>&copy;&nbsp;2019&nbsp;<a target="_blank" href="http://zophyr.com" rel="noopener noreferrer">Zephyr</a></p></footer></div></div></div></div><script src="/js/jquery-3.1.0.min.js"></script><script src="/js/bootstrap.min.js"></script><script src="/js/jquery-migrate-1.2.1.min.js"></script><script src="/js/jquery.appear.js"></script><script src="/js/google-analytics.js"></script><script src="/js/typography.js"></script></body></html>
