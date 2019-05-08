@@ -1,3 +1,12 @@
+---
+title: git commit 规范
+date: 2019-05-04 02:15:10
+description: 良好的 commit 规范有助于了解版本的更新，以及后续代码的维护。
+categories: 教程
+tags: [环境配置, 教程, Git]
+toc: true
+---
+
 # git commit 规范
 
 良好的 commit 规范有助于了解版本的更新，以及后续代码的维护。
