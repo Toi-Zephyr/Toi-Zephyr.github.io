@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://zophyr.com/"/>
-  <updated>2019-03-27T10:00:37.564Z</updated>
+  <updated>2019-05-08T13:52:07.946Z</updated>
   <id>http://zophyr.com/</id>
   
   <author>
@@ -15,6 +15,72 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title></title>
+    <link href="http://zophyr.com/2019/05/08/language/"/>
+    <id>http://zophyr.com/2019/05/08/language/</id>
+    <published>2019-05-08T13:52:07.946Z</published>
+    <updated>2019-05-08T13:52:07.946Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;使用-JS-正确获取用户语言&quot;&gt;&lt;a href=&quot;#使用-JS-正确获取用户语言&quot; class=&quot;headerlink&quot; title=&quot;使用 JS 正确获取用户语言&quot;&gt;&lt;/a&gt;使用 JS 正确获取用户语言&lt;/h1&gt;&lt;p&gt;在 JS
+        
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title></title>
+    <link href="http://zophyr.com/2019/05/08/git-flow/"/>
+    <id>http://zophyr.com/2019/05/08/git-flow/</id>
+    <published>2019-05-08T13:52:07.945Z</published>
+    <updated>2019-05-08T13:52:07.946Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;git-flow-实战教程&quot;&gt;&lt;a href=&quot;#git-flow-实战教程&quot; class=&quot;headerlink&quot; title=&quot;git-flow 实战教程&quot;&gt;&lt;/a&gt;git-flow 实战教程&lt;/h1&gt;&lt;h2 id=&quot;什么是-git-flow&quot;&gt;&lt;a
+        
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title></title>
+    <link href="http://zophyr.com/2019/05/08/git-commit/"/>
+    <id>http://zophyr.com/2019/05/08/git-commit/</id>
+    <published>2019-05-08T13:52:07.945Z</published>
+    <updated>2019-05-08T13:52:07.945Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;git-commit-规范&quot;&gt;&lt;a href=&quot;#git-commit-规范&quot; class=&quot;headerlink&quot; title=&quot;git commit 规范&quot;&gt;&lt;/a&gt;git commit 规范&lt;/h1&gt;&lt;p&gt;良好的 commit
+        
+      
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>JavaScript 中的防抖与节流</title>
@@ -119,28 +185,6 @@
   </entry>
   
   <entry>
-    <title>命令行链接 WPA Wi-Fi</title>
-    <link href="http://zophyr.com/2019/03/03/term-wifi/"/>
-    <id>http://zophyr.com/2019/03/03/term-wifi/</id>
-    <published>2019-03-03T02:25:44.000Z</published>
-    <updated>2019-03-27T06:28:23.098Z</updated>
-    
-    <summary type="html">
-    
-      使用命令行命令链接Wi-Fi
-    
-    </summary>
-    
-      <category term="教程" scheme="http://zophyr.com/categories/%E6%95%99%E7%A8%8B/"/>
-    
-    
-      <category term="教程" scheme="http://zophyr.com/tags/%E6%95%99%E7%A8%8B/"/>
-    
-      <category term="命令行" scheme="http://zophyr.com/tags/%E5%91%BD%E4%BB%A4%E8%A1%8C/"/>
-    
-  </entry>
-  
-  <entry>
     <title>在树莓派上安装 Geth</title>
     <link href="http://zophyr.com/2019/03/03/eth-in-raspbian/"/>
     <id>http://zophyr.com/2019/03/03/eth-in-raspbian/</id>
@@ -161,6 +205,28 @@
       <category term="命令行" scheme="http://zophyr.com/tags/%E5%91%BD%E4%BB%A4%E8%A1%8C/"/>
     
       <category term="以太坊" scheme="http://zophyr.com/tags/%E4%BB%A5%E5%A4%AA%E5%9D%8A/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>命令行链接 WPA Wi-Fi</title>
+    <link href="http://zophyr.com/2019/03/03/term-wifi/"/>
+    <id>http://zophyr.com/2019/03/03/term-wifi/</id>
+    <published>2019-03-03T02:25:44.000Z</published>
+    <updated>2019-03-27T06:28:23.098Z</updated>
+    
+    <summary type="html">
+    
+      使用命令行命令链接Wi-Fi
+    
+    </summary>
+    
+      <category term="教程" scheme="http://zophyr.com/categories/%E6%95%99%E7%A8%8B/"/>
+    
+    
+      <category term="教程" scheme="http://zophyr.com/tags/%E6%95%99%E7%A8%8B/"/>
+    
+      <category term="命令行" scheme="http://zophyr.com/tags/%E5%91%BD%E4%BB%A4%E8%A1%8C/"/>
     
   </entry>
   
@@ -429,84 +495,6 @@
       <category term="环境配置" scheme="http://zophyr.com/tags/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/"/>
     
       <category term="eth" scheme="http://zophyr.com/tags/eth/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>mux 源码分析及性能对比</title>
-    <link href="http://zophyr.com/2018/11/11/go-web-serve-3/"/>
-    <id>http://zophyr.com/2018/11/11/go-web-serve-3/</id>
-    <published>2018-11-11T09:19:11.000Z</published>
-    <updated>2019-03-27T06:28:23.094Z</updated>
-    
-    <summary type="html">
-    
-      使用 Go 编写 web 后台服务 —— 系列文章之三
-    
-    </summary>
-    
-      <category term="教程" scheme="http://zophyr.com/categories/%E6%95%99%E7%A8%8B/"/>
-    
-    
-      <category term="Go" scheme="http://zophyr.com/tags/Go/"/>
-    
-      <category term="web" scheme="http://zophyr.com/tags/web/"/>
-    
-      <category term="后台服务" scheme="http://zophyr.com/tags/%E5%90%8E%E5%8F%B0%E6%9C%8D%E5%8A%A1/"/>
-    
-      <category term="源码阅读" scheme="http://zophyr.com/tags/%E6%BA%90%E7%A0%81%E9%98%85%E8%AF%BB/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>初试 Go 服务</title>
-    <link href="http://zophyr.com/2018/11/11/go-web-serve-1/"/>
-    <id>http://zophyr.com/2018/11/11/go-web-serve-1/</id>
-    <published>2018-11-11T09:08:56.000Z</published>
-    <updated>2019-03-27T06:28:23.094Z</updated>
-    
-    <summary type="html">
-    
-      使用 Go 编写 web 后台服务 —— 系列文章之一
-    
-    </summary>
-    
-      <category term="教程" scheme="http://zophyr.com/categories/%E6%95%99%E7%A8%8B/"/>
-    
-    
-      <category term="教程" scheme="http://zophyr.com/tags/%E6%95%99%E7%A8%8B/"/>
-    
-      <category term="hello-world" scheme="http://zophyr.com/tags/hello-world/"/>
-    
-      <category term="Go" scheme="http://zophyr.com/tags/Go/"/>
-    
-      <category term="web" scheme="http://zophyr.com/tags/web/"/>
-    
-      <category term="后台服务" scheme="http://zophyr.com/tags/%E5%90%8E%E5%8F%B0%E6%9C%8D%E5%8A%A1/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>git 分支合作教程（未完成）</title>
-    <link href="http://zophyr.com/2018/11/10/git-work/"/>
-    <id>http://zophyr.com/2018/11/10/git-work/</id>
-    <published>2018-11-10T14:24:01.000Z</published>
-    <updated>2019-03-27T06:28:23.094Z</updated>
-    
-    <summary type="html">
-    
-      Git 多人合作简要介绍
-    
-    </summary>
-    
-      <category term="教程" scheme="http://zophyr.com/categories/%E6%95%99%E7%A8%8B/"/>
-    
-    
-      <category term="教程" scheme="http://zophyr.com/tags/%E6%95%99%E7%A8%8B/"/>
-    
-      <category term="环境配置" scheme="http://zophyr.com/tags/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/"/>
-    
-      <category term="Git" scheme="http://zophyr.com/tags/Git/"/>
     
   </entry>
   
