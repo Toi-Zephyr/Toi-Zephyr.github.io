@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://zophyr.com/"/>
-  <updated>2019-05-08T14:19:40.336Z</updated>
+  <updated>2019-05-15T14:45:23.418Z</updated>
   <id>http://zophyr.com/</id>
   
   <author>
@@ -15,6 +15,34 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>前端国际化之布局建议</title>
+    <link href="http://zophyr.com/2019/05/10/i18n/"/>
+    <id>http://zophyr.com/2019/05/10/i18n/</id>
+    <published>2019-05-10T11:44:45.000Z</published>
+    <updated>2019-05-15T14:45:23.418Z</updated>
+    
+    <summary type="html">
+    
+      本文涉及国际化中可能遇到的问题，集中在如何解决不同地区下不同的布局习惯。
+    
+    </summary>
+    
+      <category term="教程" scheme="http://zophyr.com/categories/%E6%95%99%E7%A8%8B/"/>
+    
+    
+      <category term="教程" scheme="http://zophyr.com/tags/%E6%95%99%E7%A8%8B/"/>
+    
+      <category term="CSS" scheme="http://zophyr.com/tags/CSS/"/>
+    
+      <category term="i18n" scheme="http://zophyr.com/tags/i18n/"/>
+    
+      <category term="国际化" scheme="http://zophyr.com/tags/%E5%9B%BD%E9%99%85%E5%8C%96/"/>
+    
+      <category term="前端" scheme="http://zophyr.com/tags/%E5%89%8D%E7%AB%AF/"/>
+    
+  </entry>
   
   <entry>
     <title>使用 JS 正确获取用户语言</title>
@@ -398,9 +426,9 @@
     
       <category term="算法" scheme="http://zophyr.com/tags/%E7%AE%97%E6%B3%95/"/>
     
-      <category term="x.509" scheme="http://zophyr.com/tags/x-509/"/>
-    
       <category term="加密" scheme="http://zophyr.com/tags/%E5%8A%A0%E5%AF%86/"/>
+    
+      <category term="x.509" scheme="http://zophyr.com/tags/x-509/"/>
     
   </entry>
   
@@ -452,9 +480,9 @@
     
       <category term="算法" scheme="http://zophyr.com/tags/%E7%AE%97%E6%B3%95/"/>
     
-      <category term="加密" scheme="http://zophyr.com/tags/%E5%8A%A0%E5%AF%86/"/>
-    
       <category term="MD5" scheme="http://zophyr.com/tags/MD5/"/>
+    
+      <category term="加密" scheme="http://zophyr.com/tags/%E5%8A%A0%E5%AF%86/"/>
     
   </entry>
   
@@ -477,32 +505,6 @@
       <category term="教程" scheme="http://zophyr.com/tags/%E6%95%99%E7%A8%8B/"/>
     
       <category term="算法" scheme="http://zophyr.com/tags/%E7%AE%97%E6%B3%95/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Dapp 开发学习（未完成）</title>
-    <link href="http://zophyr.com/2018/11/20/dapp-learning-1/"/>
-    <id>http://zophyr.com/2018/11/20/dapp-learning-1/</id>
-    <published>2018-11-19T23:14:50.000Z</published>
-    <updated>2019-03-27T06:28:23.093Z</updated>
-    
-    <summary type="html">
-    
-      学习开发智能合约应用
-    
-    </summary>
-    
-      <category term="教程" scheme="http://zophyr.com/categories/%E6%95%99%E7%A8%8B/"/>
-    
-    
-      <category term="教程" scheme="http://zophyr.com/tags/%E6%95%99%E7%A8%8B/"/>
-    
-      <category term="hello-world" scheme="http://zophyr.com/tags/hello-world/"/>
-    
-      <category term="环境配置" scheme="http://zophyr.com/tags/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/"/>
-    
-      <category term="eth" scheme="http://zophyr.com/tags/eth/"/>
     
   </entry>
   
